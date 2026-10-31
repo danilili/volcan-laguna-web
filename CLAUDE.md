@@ -6,7 +6,7 @@ Plan completo y auditoría de diseño: documento de Claude "Volcán Laguna · Pl
 
 ## Stack (no cambiar sin hablar con D4ny)
 
-- **Next.js 15, App Router, TypeScript, Tailwind v4**. Deploy en **Vercel** (dominio `volcanlaguna.com`, por comprar).
+- **Next.js 16 (App Router, Cache Components activado), TypeScript, Tailwind v4**. Se instaló 16.4.3 con `create-next-app@latest` el 31 oct 2026; el plan original decía 15. Deploy en **Vercel** (dominio `volcanlaguna.com`, por comprar).
 - Contenido de páginas en **MDX** dentro de `content/` (casas, textos del Home, alimentos, términos, privacidad). Sin CMS.
 - Retiros y cotizaciones en **Supabase** (tablas `retiros`, `retiro_fotos`, `cotizaciones_retiro`). Proyecto de Supabase ya existe (el de Tlali); las tablas nuevas se crean con migraciones en `supabase/migrations/`, numeradas desde `012_`.
 - **Beds24 es la única fuente de precios, disponibilidad y estancias mínimas.** El sitio nunca calcula precios. Propiedad 353281; habitaciones: Casa Los Mangos 728645, Los Mangos para cuatro 728648, Casa Moringa 728649, Casa Santuario 728650, Santuario para cuatro 728651.

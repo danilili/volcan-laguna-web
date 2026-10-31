@@ -1,26 +1,198 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ---------------------------------------------------------------------------
+   Volcán Laguna · design tokens
+   "La laguna te recibe": deep lake blue, sand/gold accents, off-white,
+   jungle green for icons. Mobile first (390 px).
+--------------------------------------------------------------------------- */
+
+@theme {
+  /* Laguna (deep lake blue) · hero, footer, dark sections */
+  --color-laguna-950: #071e27;
+  --color-laguna-900: #0a2a36;
+  --color-laguna-800: #0f3b4c;
+  --color-laguna-700: #16526a;
+  --color-laguna-500: #2e7f96;
+  --color-laguna-300: #8fc1cf;
+  --color-laguna-100: #e3f0f4;
+
+  /* Arena (sand / gold) · buttons and accents */
+  --color-arena-700: #9a7430;
+  --color-arena-600: #b88e3f;
+  --color-arena-500: #d4a857;
+  --color-arena-300: #e8cf98;
+  --color-arena-100: #f6ecd6;
+
+  /* Crema (off-white) · page background and surfaces */
+  --color-crema-50: #fffdf9;
+  --color-crema-100: #f7f3ec;
+  --color-crema-200: #ede6da;
+  --color-crema-300: #ddd3c2;
+
+  /* Selva (jungle green) · icons and small accents */
+  --color-selva-700: #24472d;
+  --color-selva-600: #2f5d3a;
+  --color-selva-500: #3f7a4c;
+  --color-selva-100: #e6efe6;
+
+  /* Ink (text) */
+  --color-ink-900: #1e2a2f;
+  --color-ink-700: #3a474d;
+  --color-ink-500: #5b6b70;
+  --color-ink-300: #9aa7ab;
+
+  --color-whatsapp: #25d366;
+  --color-whatsapp-dark: #1ebe5b;
+
+  /* Type scale (fluid) */
+  --text-display: clamp(2.25rem, 6vw + 1rem, 4.5rem);
+  --text-display--line-height: 1.02;
+  --text-display--letter-spacing: -0.02em;
+  --text-h1: clamp(2rem, 4vw + 1rem, 3.25rem);
+  --text-h1--line-height: 1.08;
+  --text-h1--letter-spacing: -0.015em;
+  --text-h2: clamp(1.625rem, 2.5vw + 1rem, 2.5rem);
+  --text-h2--line-height: 1.12;
+  --text-h2--letter-spacing: -0.01em;
+  --text-h3: clamp(1.25rem, 1vw + 1rem, 1.5rem);
+  --text-h3--line-height: 1.25;
+  --text-lede: clamp(1.0625rem, 0.5vw + 1rem, 1.25rem);
+  --text-lede--line-height: 1.5;
+
+  /* Radii, shadows, easing */
+  --radius-card: 1.25rem;
+  --radius-pill: 999px;
+  --shadow-card: 0 1px 2px rgb(7 30 39 / 0.06), 0 12px 32px -12px rgb(7 30 39 / 0.18);
+  --shadow-float: 0 8px 24px -8px rgb(7 30 39 / 0.35);
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-fraunces), "Iowan Old Style", Georgia, serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ---------------------------------------------------------------------------
+   Base
+--------------------------------------------------------------------------- */
+
+:root {
+  color-scheme: light;
+  --background: var(--color-crema-100);
+  --foreground: var(--color-ink-900);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  font-size: 1.0625rem; /* 17 px body */
+  line-height: 1.6;
+  font-feature-settings: "ss01", "cv11";
+  overflow-x: clip;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  text-wrap: balance;
+  color: var(--color-laguna-900);
+}
+
+p {
+  text-wrap: pretty;
+}
+
+::selection {
+  background: var(--color-arena-300);
+  color: var(--color-laguna-900);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-arena-500);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Utilities
+--------------------------------------------------------------------------- */
+
+@utility font-display {
+  font-family: var(--font-display);
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+/* Slow Ken Burns for hero photos (paused under reduced motion) */
+@keyframes ken-burns {
+  from { transform: scale(1) translate3d(0, 0, 0); }
+  to   { transform: scale(1.08) translate3d(-1.5%, -1%, 0); }
+}
+
+@utility animate-ken-burns {
+  animation: ken-burns 18s var(--ease-out-soft) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-ken-burns {
+    animation: none;
+  }
+}
+
+/* Prose for MDX bodies (kept small on purpose; Tailwind typography not installed) */
+.prose-vl {
+  max-width: 68ch;
+}
+.prose-vl > * + * {
+  margin-top: 1em;
+}
+.prose-vl h2 {
+  font-size: var(--text-h2);
+  line-height: var(--text-h2--line-height);
+  margin-top: 1.75em;
+}
+.prose-vl h3 {
+  font-size: var(--text-h3);
+  line-height: var(--text-h3--line-height);
+  margin-top: 1.5em;
+}
+.prose-vl ul, .prose-vl ol {
+  padding-left: 1.25em;
+}
+.prose-vl ul {
+  list-style: disc;
+}
+.prose-vl ol {
+  list-style: decimal;
+}
+.prose-vl li + li {
+  margin-top: 0.35em;
+}
+.prose-vl a {
+  color: var(--color-laguna-700);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose-vl strong {
+  color: var(--color-laguna-900);
+  font-weight: 600;
 }
