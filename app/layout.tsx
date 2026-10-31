@@ -1,6 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
+import { Footer } from "@/components/layout/Footer";
+import { Header } from "@/components/layout/Header";
+import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
 import { site } from "@/lib/site";
 
 const fraunces = Fraunces({
@@ -40,7 +43,20 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="es-MX" className={`${fraunces.variable} ${inter.variable} h-full antialiased`}>
-      <body className="flex min-h-full flex-col">{children}</body>
+      <body className="flex min-h-full flex-col">
+        <a
+          href="#contenido"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:rounded-pill focus:bg-arena-500 focus:px-4 focus:py-2 focus:text-laguna-950"
+        >
+          Ir al contenido
+        </a>
+        <Header />
+        <main id="contenido" className="flex-1">
+          {children}
+        </main>
+        <Footer />
+        <WhatsAppFloat />
+      </body>
     </html>
   );
 }
