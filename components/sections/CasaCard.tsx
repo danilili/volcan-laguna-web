@@ -1,0 +1,59 @@
+import Image from "next/image";
+import Link from "next/link";
+import { Icon } from "@/components/ui/Icon";
+import { cn } from "@/lib/cn";
+import type { Casa } from "@/lib/content";
+import { formatMXN } from "@/lib/format";
+
+/**
+ * House card. Price is the reference "desde" price for now (TODO week 2:
+ * live nightly price from Beds24; the site never computes prices).
+ */
+export function CasaCard({ casa, alt, className, priority = false }: { casa: Casa; alt: string; className?: string; priority?: boolean }) {
+  return (
+    <Link
+      href={`/casas/${casa.slug}`}
+      className={cn(
+        "group flex flex-col overflow-hidden rounded-card bg-crema-50 shadow-card transition-transform duration-200 hover:-translate-y-0.5",
+        className,
+      )}
+    >
+      <span className="relative block aspect-[4/3] overflow-hidden">
+        <Image
+          src={casa.imagenPrincipal}
+          alt={alt}
+          fill
+          sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 85vw"
+          preload={priority}
+          className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+        />
+        <span className="absolute top-3 left-3 rounded-pill bg-crema-50/90 px-2.5 py-1 text-xs font-medium text-laguna-900 backdrop-blur-sm">
+          Hasta {casa.capacidad} personas
+        </span>
+      </span>
+      <span className="flex flex-1 flex-col p-4 sm:p-5">
+        <span className="font-display text-2xl leading-tight text-laguna-900">{casa.nombre}</span>
+        <span className="mt-1.5 line-clamp-2 text-sm text-ink-500">{casa.resumen}</span>
+        <span className="mt-4 flex items-end justify-between gap-3">
+          <span className="flex items-center gap-3 text-sm text-ink-700">
+            <span className="inline-flex items-center gap-1">
+              <Icon name="recamara" size={18} className="text-selva-600" /> {casa.recamaras}
+            </span>
+            {casa.banos ? (
+              <span className="inline-flex items-center gap-1">
+                <Icon name="bano" size={18} className="text-selva-600" /> {casa.banos}
+              </span>
+            ) : null}
+          </span>
+          <span className="text-right">
+            <span className="block text-[11px] uppercase tracking-[0.14em] text-ink-500">desde</span>
+            <span className="block font-display text-xl text-laguna-900">
+              {formatMXN(casa.precioDesde)}
+              <span className="font-sans text-xs text-ink-500"> / noche</span>
+            </span>
+          </span>
+        </span>
+      </span>
+    </Link>
+  );
+}

@@ -1,0 +1,10 @@
+export { Hero } from "./Hero";
+export { Somos } from "./Somos";
+export type { CasaResumen } from "./Somos";
+export { Casas } from "./Casas";
+export { CasaCard } from "./CasaCard";
+export { Laguna } from "./Laguna";
+export { Retiros } from "./Retiros";
+export { Alimentos } from "./Alimentos";
+export { Resenas } from "./Resenas";
+export { Mapa } from "./Mapa";
