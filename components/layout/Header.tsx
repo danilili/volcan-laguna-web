@@ -50,6 +50,7 @@ export function Header() {
   const solid = scrolled || open;
 
   return (
+    <>
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow,color] duration-200",
@@ -119,8 +120,10 @@ export function Header() {
           </button>
         </div>
       </div>
+    </header>
 
-      {/* Mobile overlay */}
+      {/* Mobile overlay. Sibling of <header>: its backdrop-filter would otherwise
+          become the containing block for this fixed element. */}
       <div
         id="menu-movil"
         className={cn(
@@ -153,6 +156,6 @@ export function Header() {
           </a>
         </div>
       </div>
-    </header>
+    </>
   );
 }
