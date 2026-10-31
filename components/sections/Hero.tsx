@@ -16,9 +16,9 @@ export function Hero({ frase, subtitulo, slides }: Props) {
     <section className="relative flex min-h-[100svh] flex-col justify-end text-crema-50" aria-labelledby="hero-titulo">
       <HeroSlideshow slides={slides} />
 
-      <div className="relative mx-auto w-full max-w-7xl px-4 pt-32 pb-8 sm:px-6 sm:pb-12 lg:px-8">
+      <div className="relative mx-auto w-full max-w-7xl px-4 pt-28 pb-5 sm:px-6 sm:pb-12 lg:px-8">
         <Reveal>
-          <p className="mb-4 inline-flex items-center gap-2 rounded-pill bg-crema-50/12 px-3 py-1.5 text-sm backdrop-blur-sm">
+          <p className="mb-3 inline-flex items-center gap-2 rounded-pill bg-crema-50/12 px-3 py-1.5 text-sm backdrop-blur-sm">
             <Icon name="estrella" size={16} className="text-arena-500" />
             <span className="font-medium">{site.google.rating}</span>
             <span className="text-crema-50/80">· {site.google.reviews} reseñas en Google</span>
@@ -33,22 +33,22 @@ export function Hero({ frase, subtitulo, slides }: Props) {
 
         {subtitulo ? (
           <Reveal delay={0.14}>
-            <p className="mt-4 max-w-xl text-lede text-crema-50/85">{subtitulo}</p>
+            <p className="mt-3 line-clamp-2 max-w-xl text-base text-crema-50/85 sm:text-lede">{subtitulo}</p>
           </Reveal>
         ) : null}
 
         <Reveal delay={0.2}>
-          <div className="mt-7 flex flex-wrap gap-3">
-            <Button href="/reservar" size="lg">
+          <div className="mt-5 flex gap-2.5 sm:mt-7 sm:gap-3">
+            <Button href="/reservar" size="md" className="sm:h-14 sm:px-8 sm:text-lg">
               Reservar
             </Button>
-            <Button href="/organiza-tu-retiro" variant="inverse" size="lg">
+            <Button href="/organiza-tu-retiro" variant="inverse" size="md" className="sm:h-14 sm:px-8 sm:text-lg">
               Organiza tu retiro
             </Button>
           </div>
         </Reveal>
 
-        <Reveal delay={0.28} className="mt-8 sm:mt-10">
+        <Reveal delay={0.28} className="mt-5 sm:mt-10">
           <DateBar />
         </Reveal>
       </div>

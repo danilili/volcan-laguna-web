@@ -26,7 +26,7 @@ export function Alimentos({ titulo, texto }: { titulo: string; texto?: string })
       </div>
       <ul className="mt-8 grid grid-cols-3 gap-2 sm:gap-3">
         {list.map((f, i) => (
-          <Reveal as="li" key={f.src} delay={i * 0.04} className={i === 0 || i === 5 ? "col-span-2 row-span-1 sm:col-span-1" : ""}>
+          <Reveal as="li" key={f.src} delay={i * 0.04}>
             <Link href="/alimentos" className="group relative block aspect-square overflow-hidden rounded-[0.9rem] sm:rounded-card">
               <Image
                 src={f.src}
