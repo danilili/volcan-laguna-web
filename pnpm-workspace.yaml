@@ -1,3 +1,7 @@
+# pnpm 12 refuses to install on CI unless every dependency with install
+# scripts is explicitly allowed or denied here. None of these need to run:
+# sharp and esbuild ship prebuilt binaries as optional deps.
 allowBuilds:
   sharp: false
   unrs-resolver: false
+  esbuild: false
