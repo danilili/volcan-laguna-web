@@ -1,0 +1,1012 @@
+{
+  "/images/alimentos/alimentos-01-mesa-de-hummus-y-ensaladas.jpg": {
+    "alt": "Mesa con hummus de garbanzo, hummus de betabel y ensaladas de temporada",
+    "width": 1920,
+    "height": 1440
+  },
+  "/images/alimentos/alimentos-02-pudin-de-chia-con-fruta.jpg": {
+    "alt": "Vasos de pudín de chía con papaya, fresa y zarzamora",
+    "width": 1920,
+    "height": 1440
+  },
+  "/images/alimentos/alimentos-03-pudin-de-cereales-con-granola.jpg": {
+    "alt": "Pudín de cereales con granola casera y galleta de avena",
+    "width": 1440,
+    "height": 1920
+  },
+  "/images/alimentos/alimentos-04-charola-de-fruta-de-temporada.jpg": {
+    "alt": "Charola de fruta de temporada picada",
+    "width": 1920,
+    "height": 1440
+  },
+  "/images/alimentos/alimentos-05-brochetas-de-fruta.jpg": {
+    "alt": "Brochetas de fruta con sandía, melón, uva y moras",
+    "width": 1440,
+    "height": 1920
+  },
+  "/images/alimentos/alimentos-06-ensalada-de-temporada.jpg": {
+    "alt": "Plato de ensalada de temporada con tabule y tortita de verduras",
+    "width": 1440,
+    "height": 1920
+  },
+  "/images/alimentos/alimentos-07-ensalada-con-quinoa-y-aceitunas.jpg": {
+    "alt": "Ensalada con quinoa, jitomate, aceitunas y hojas verdes",
+    "width": 1440,
+    "height": 1920
+  },
+  "/images/alimentos/alimentos-08-hummus-y-guarniciones.jpg": {
+    "alt": "Hummus de garbanzo y de betabel con guarniciones",
+    "width": 1440,
+    "height": 1920
+  },
+  "/images/alimentos/alimentos-09-kebab-en-pan-pita.jpg": {
+    "alt": "Kebab en pan pita con hummus, hongos salteados y hojas verdes",
+    "width": 1920,
+    "height": 1440
+  },
+  "/images/alimentos/alimentos-10-buffet-con-vista-al-lago.jpg": {
+    "alt": "Barra de alimentos con crudités y brochetas, con el lago al fondo",
+    "width": 1440,
+    "height": 1920
+  },
+  "/images/alimentos/alimentos-11-mesa-en-la-terraza.jpg": {
+    "alt": "Mesa en la terraza junto al lago con flores y vasos",
+    "width": 1920,
+    "height": 1440
+  },
+  "/images/alimentos/alimentos-12-equipo-de-cocina.jpg": {
+    "alt": "Equipo de cocina de Volcán Laguna con los platillos del día",
+    "width": 1440,
+    "height": 1920
+  },
+  "/images/alimentos/alimentos-13-tortillas-a-mano.jpg": {
+    "alt": "Preparación de tortillas a mano en la cocina",
+    "width": 1920,
+    "height": 1440
+  },
+  "/images/alimentos/alimentos-14-barra-de-comida.jpg": {
+    "alt": "Barra de comida servida vista desde arriba",
+    "width": 1920,
+    "height": 1440
+  },
+  "/images/general/general-01-lancha-lago.jpg": {
+    "alt": "Lancha lago, Volcán Laguna",
+    "width": 1920,
+    "height": 1282
+  },
+  "/images/general/general-02-lago-desde-el-jardin.jpg": {
+    "alt": "Lago desde el jardín, Volcán Laguna",
+    "width": 1920,
+    "height": 1282
+  },
+  "/images/general/general-03-escalinata-flores.jpg": {
+    "alt": "Escalinata flores, Volcán Laguna",
+    "width": 1920,
+    "height": 1283
+  },
+  "/images/general/general-04-vista-aerea-volcan-laguna.jpg": {
+    "alt": "Vista aérea volcán laguna, Volcán Laguna",
+    "width": 1920,
+    "height": 1083
+  },
+  "/images/general/general-05-amanecer-en-el-lago.jpg": {
+    "alt": "Amanecer en el lago, Volcán Laguna",
+    "width": 1920,
+    "height": 1083
+  },
+  "/images/general/retiros-01-tapetes-yoga.jpg": {
+    "alt": "Tapetes yoga, Volcán Laguna",
+    "width": 1920,
+    "height": 1282
+  },
+  "/images/general/retiros-02-salon-chimenea.jpg": {
+    "alt": "Salón chimenea, Volcán Laguna",
+    "width": 1920,
+    "height": 1282
+  },
+  "/images/general/retiros-03-jardin-arboles.jpg": {
+    "alt": "Jardín árboles, Volcán Laguna",
+    "width": 1920,
+    "height": 1282
+  },
+  "/images/general/retiros-04-jacuzzi-noche.jpg": {
+    "alt": "Jacuzzi noche, Volcán Laguna",
+    "width": 1920,
+    "height": 1280
+  },
+  "/images/los-mangos/mangos-01-vista-aerea-casa-muelle.jpg": {
+    "alt": "Vista aérea casa muelle, Casa Los Mangos",
+    "width": 1920,
+    "height": 1083
+  },
+  "/images/los-mangos/mangos-02-vista-aerea-jardin.jpg": {
+    "alt": "Vista aérea jardín, Casa Los Mangos",
+    "width": 1920,
+    "height": 1083
+  },
+  "/images/los-mangos/mangos-03-muelle-privado.jpg": {
+    "alt": "Muelle privado, Casa Los Mangos",
+    "width": 1920,
+    "height": 1282
+  },
+  "/images/los-mangos/mangos-04-muelle-lago.jpg": {
+    "alt": "Muelle lago, Casa Los Mangos",
+    "width": 1282,
+    "height": 1920
+  },
+  "/images/los-mangos/mangos-05-lago-desde-el-muelle.jpg": {
+    "alt": "Lago desde el muelle, Casa Los Mangos",
+    "width": 1920,
+    "height": 1282
+  },
+  "/images/los-mangos/mangos-06-paseo-en-lancha.jpg": {
+    "alt": "Paseo en lancha, Casa Los Mangos",
+    "width": 1282,
+    "height": 1920
+  },
+  "/images/los-mangos/mangos-07-muelle-buganvilias.jpg": {
+    "alt": "Muelle buganvilias, Casa Los Mangos",
+    "width": 1282,
+    "height": 1920
+  },
+  "/images/los-mangos/mangos-08-acceso-al-agua.jpg": {
+    "alt": "Acceso al agua, Casa Los Mangos",
+    "width": 1283,
+    "height": 1920
+  },
+  "/images/los-mangos/mangos-09-jardin.jpg": {
+    "alt": "Jardín, Casa Los Mangos",
+    "width": 1920,
+    "height": 1282
+  },
+  "/images/los-mangos/mangos-10-jardin-terraza.jpg": {
+    "alt": "Jardín terraza, Casa Los Mangos",
+    "width": 1920,
+    "height": 1282
+  },
+  "/images/los-mangos/mangos-11-terraza-sillas.jpg": {
+    "alt": "Terraza sillas, Casa Los Mangos",
+    "width": 1920,
+    "height": 1282
+  },
+  "/images/los-mangos/mangos-12-chimenea-terraza.jpg": {
+    "alt": "Chimenea terraza, Casa Los Mangos",
+    "width": 1920,
+    "height": 1280
+  },
+  "/images/los-mangos/mangos-13-escalera-piedra.jpg": {
+    "alt": "Escalera piedra, Casa Los Mangos",
+    "width": 1282,
+    "height": 1920
+  },
+  "/images/los-mangos/mangos-14-sala.jpg": {
+    "alt": "Sala, Casa Los Mangos",
+    "width": 1920,
+    "height": 1282
+  },
+  "/images/los-mangos/mangos-15-cocina.jpg": {
+    "alt": "Cocina, Casa Los Mangos",
+    "width": 1920,
+    "height": 1282
+  },
+  "/images/los-mangos/mangos-16-recamara-principal.jpg": {
+    "alt": "Recámara principal, Casa Los Mangos",
+    "width": 1282,
+    "height": 1920
+  },
+  "/images/los-mangos/mangos-17-recamara.jpg": {
+    "alt": "Recámara, Casa Los Mangos",
+    "width": 1920,
+    "height": 1278
+  },
+  "/images/los-mangos/mangos-18-recamara-literas.jpg": {
+    "alt": "Recámara literas, Casa Los Mangos",
+    "width": 1282,
+    "height": 1920
+  },
+  "/images/los-mangos/mangos-19-bano.jpg": {
+    "alt": "Baño, Casa Los Mangos",
+    "width": 1282,
+    "height": 1920
+  },
+  "/images/moringa/moringa-01-casita-terraza-jardin.jpg": {
+    "alt": "Casa Moringa entre los árboles, con su terraza y jardín",
+    "width": 1920,
+    "height": 1083
+  },
+  "/images/moringa/moringa-02-terraza-camastros-hamaca.jpg": {
+    "alt": "Terraza de Casa Moringa con camastros y hamaca",
+    "width": 1920,
+    "height": 1282
+  },
+  "/images/moringa/moringa-03-terraza-entre-arboles.jpg": {
+    "alt": "Terraza entre los árboles de Casa Moringa",
+    "width": 1920,
+    "height": 1282
+  },
+  "/images/moringa/moringa-04-silla-colgante.jpg": {
+    "alt": "Silla colgante en la terraza de Casa Moringa",
+    "width": 1283,
+    "height": 1920
+  },
+  "/images/moringa/moringa-05-deck-exterior.jpg": {
+    "alt": "Deck exterior de Casa Moringa",
+    "width": 1282,
+    "height": 1920
+  },
+  "/images/moringa/moringa-06-vista-al-lago-entre-arboles.jpg": {
+    "alt": "Vista al lago entre los árboles desde Casa Moringa",
+    "width": 1282,
+    "height": 1920
+  },
+  "/images/moringa/moringa-07-escaleras-jardin.jpg": {
+    "alt": "Escaleras del jardín de Casa Moringa",
+    "width": 1920,
+    "height": 1283
+  },
+  "/images/moringa/moringa-08-recamara-principal.jpg": {
+    "alt": "Recámara principal de Casa Moringa",
+    "width": 1920,
+    "height": 1282
+  },
+  "/images/moringa/moringa-09-recamara-principal-detalle.jpg": {
+    "alt": "Detalle de la recámara principal de Casa Moringa",
+    "width": 1920,
+    "height": 1282
+  },
+  "/images/moringa/moringa-10-recamara-principal-camas.jpg": {
+    "alt": "Camas de la recámara principal de Casa Moringa",
+    "width": 1920,
+    "height": 1282
+  },
+  "/images/moringa/moringa-11-segunda-recamara.jpg": {
+    "alt": "Segunda recámara de Casa Moringa",
+    "width": 1920,
+    "height": 1283
+  },
+  "/images/moringa/moringa-12-bano-principal.jpg": {
+    "alt": "Baño principal de Casa Moringa",
+    "width": 1920,
+    "height": 1282
+  },
+  "/images/moringa/moringa-13-bano-tina.jpg": {
+    "alt": "Baño con tina de Casa Moringa",
+    "width": 1283,
+    "height": 1920
+  },
+  "/images/moringa/moringa-14-segundo-bano.jpg": {
+    "alt": "Segundo baño de Casa Moringa",
+    "width": 1282,
+    "height": 1920
+  },
+  "/images/retiro-junio-2026/retiro-junio-01-yoga-en-el-muelle.jpg": {
+    "alt": "Yoga en el muelle frente al lago — retiro de junio en Volcán Laguna",
+    "width": 1440,
+    "height": 1920
+  },
+  "/images/retiro-junio-2026/retiro-junio-02-meditacion-muelle-flores.jpg": {
+    "alt": "Meditación en el muelle con flores — retiro de junio en Volcán Laguna",
+    "width": 1920,
+    "height": 1440
+  },
+  "/images/retiro-junio-2026/retiro-junio-03-circulo-atardecer-muelle.jpg": {
+    "alt": "Círculo al atardecer en el muelle — retiro de junio en Volcán Laguna",
+    "width": 1440,
+    "height": 1920
+  },
+  "/images/retiro-junio-2026/retiro-junio-04-sesion-terraza-frente-al-lago.jpg": {
+    "alt": "Sesión en la terraza frente al lago — retiro de junio en Volcán Laguna",
+    "width": 1440,
+    "height": 1920
+  },
+  "/images/retiro-junio-2026/retiro-junio-05-cuencos-de-cuarzo.jpg": {
+    "alt": "Cuencos de cuarzo durante una sesión de sonido — retiro de junio en Volcán Laguna",
+    "width": 1440,
+    "height": 1920
+  },
+  "/images/retiro-junio-2026/retiro-junio-06-ceremonia-de-velas.jpg": {
+    "alt": "Ceremonia de velas de noche — retiro de junio en Volcán Laguna",
+    "width": 1920,
+    "height": 1440
+  },
+  "/images/retiro-junio-2026/retiro-junio-07-noche-de-luna-en-la-terraza.jpg": {
+    "alt": "Noche de luna en la terraza — retiro de junio en Volcán Laguna",
+    "width": 1440,
+    "height": 1920
+  },
+  "/images/retiro-junio-2026/retiro-junio-08-yoga-al-amanecer.jpg": {
+    "alt": "Yoga al amanecer en el muelle — retiro de junio en Volcán Laguna",
+    "width": 1440,
+    "height": 1920
+  },
+  "/images/retiro-junio-2026/retiro-junio-09-manana-en-el-muelle.jpg": {
+    "alt": "Mañana en el muelle con el lago de fondo — retiro de junio en Volcán Laguna",
+    "width": 1920,
+    "height": 1440
+  },
+  "/images/retiro-junio-2026/retiro-junio-10-meditacion-en-la-terraza.jpg": {
+    "alt": "Meditación en la terraza bajo los árboles — retiro de junio en Volcán Laguna",
+    "width": 1920,
+    "height": 1440
+  },
+  "/images/retiro-junio-2026/retiro-junio-11-sonido-con-cuencos.jpg": {
+    "alt": "Sesión de sonido con cuencos — retiro de junio en Volcán Laguna",
+    "width": 1440,
+    "height": 1920
+  },
+  "/images/retiro-junio-2026/retiro-junio-12-relajacion-frente-al-lago.jpg": {
+    "alt": "Relajación frente al lago — retiro de junio en Volcán Laguna",
+    "width": 1920,
+    "height": 1440
+  },
+  "/images/retiro-junio-2026/retiro-junio-13-circulo-en-la-sala-exterior.jpg": {
+    "alt": "Círculo en la sala exterior — retiro de junio en Volcán Laguna",
+    "width": 1920,
+    "height": 1440
+  },
+  "/images/retiro-junio-2026/retiro-junio-14-yoga-en-el-porche.jpg": {
+    "alt": "Yoga en el porche — retiro de junio en Volcán Laguna",
+    "width": 1920,
+    "height": 1440
+  },
+  "/images/retiro-junio-2026/retiro-junio-15-cierre-del-retiro.jpg": {
+    "alt": "Foto grupal del cierre del retiro — retiro de junio en Volcán Laguna",
+    "width": 1920,
+    "height": 1440
+  },
+  "/images/retiro-junio-2026/retiro-junio-16-bienvenida.jpg": {
+    "alt": "Letrero de bienvenida — retiro de junio en Volcán Laguna",
+    "width": 1920,
+    "height": 1440
+  },
+  "/images/retiro-junio-2026/retiro-junio-17-brochetas-de-fruta.jpg": {
+    "alt": "Brochetas de fruta — retiro de junio en Volcán Laguna",
+    "width": 1440,
+    "height": 1920
+  },
+  "/images/retiro-junio-2026/retiro-junio-18-plato-del-dia.jpg": {
+    "alt": "Plato del día con ensalada y tortitas — retiro de junio en Volcán Laguna",
+    "width": 1440,
+    "height": 1920
+  },
+  "/images/retiro-junio-2026/retiro-junio-19-tostada-de-desayuno.jpg": {
+    "alt": "Tostada de desayuno — retiro de junio en Volcán Laguna",
+    "width": 1920,
+    "height": 1440
+  },
+  "/images/retiro-junio-2026/retiro-junio-20-fruta-de-temporada.jpg": {
+    "alt": "Fruta de temporada — retiro de junio en Volcán Laguna",
+    "width": 1920,
+    "height": 1440
+  },
+  "/images/retiro-junio-2026/retiro-junio-21-comida-para-el-grupo.jpg": {
+    "alt": "Comida para el grupo — retiro de junio en Volcán Laguna",
+    "width": 1920,
+    "height": 1440
+  },
+  "/images/retiro-junio-2026/retiro-junio-22-postre.jpg": {
+    "alt": "Postre en vaso — retiro de junio en Volcán Laguna",
+    "width": 1440,
+    "height": 1920
+  },
+  "/images/retiro-junio-2026/retiro-junio-23-manzana-con-canela.jpg": {
+    "alt": "Manzana con canela — retiro de junio en Volcán Laguna",
+    "width": 1440,
+    "height": 1920
+  },
+  "/images/retiro-junio-2026/retiro-junio-24-equipo-de-cocina.jpg": {
+    "alt": "Equipo de cocina con la comida del día — retiro de junio en Volcán Laguna",
+    "width": 1440,
+    "height": 1920
+  },
+  "/images/retiro-junio-2026/retiro-junio-25-tortillas-hechas-a-mano.jpg": {
+    "alt": "Tortillas hechas a mano — retiro de junio en Volcán Laguna",
+    "width": 1920,
+    "height": 1440
+  },
+  "/images/retiro-junio-2026/retiro-junio-26-comida-frente-al-lago.jpg": {
+    "alt": "Comida en grupo frente al lago — retiro de junio en Volcán Laguna",
+    "width": 1920,
+    "height": 1440
+  },
+  "/images/retiros/alkimiya-sagrada-2/alkimiya-sagrada-2-01.jpg": {
+    "alt": "Alkimiya Sagrada 2, retiro en Volcán Laguna — foto 1",
+    "width": 1600,
+    "height": 1200
+  },
+  "/images/retiros/alkimiya-sagrada-2/alkimiya-sagrada-2-02.jpg": {
+    "alt": "Alkimiya Sagrada 2, retiro en Volcán Laguna — foto 2",
+    "width": 1600,
+    "height": 1200
+  },
+  "/images/retiros/alkimiya-sagrada-2/alkimiya-sagrada-2-03.jpg": {
+    "alt": "Alkimiya Sagrada 2, retiro en Volcán Laguna — foto 3",
+    "width": 1600,
+    "height": 1200
+  },
+  "/images/retiros/alkimiya-sagrada-2/alkimiya-sagrada-2-04.jpg": {
+    "alt": "Alkimiya Sagrada 2, retiro en Volcán Laguna — foto 4",
+    "width": 1200,
+    "height": 1600
+  },
+  "/images/retiros/alkimiya-sagrada-2/alkimiya-sagrada-2-05.jpg": {
+    "alt": "Alkimiya Sagrada 2, retiro en Volcán Laguna — foto 5",
+    "width": 1920,
+    "height": 1440
+  },
+  "/images/retiros/alkimiya-sagrada/alkimiya-sagrada-01.jpg": {
+    "alt": "Alkimiya Sagrada, retiro en Volcán Laguna — foto 1",
+    "width": 1600,
+    "height": 1200
+  },
+  "/images/retiros/alkimiya-sagrada/alkimiya-sagrada-02.jpg": {
+    "alt": "Alkimiya Sagrada, retiro en Volcán Laguna — foto 2",
+    "width": 1200,
+    "height": 1600
+  },
+  "/images/retiros/alkimiya-sagrada/alkimiya-sagrada-03.jpg": {
+    "alt": "Alkimiya Sagrada, retiro en Volcán Laguna — foto 3",
+    "width": 1600,
+    "height": 1200
+  },
+  "/images/retiros/alkimiya-sagrada/alkimiya-sagrada-04.jpg": {
+    "alt": "Alkimiya Sagrada, retiro en Volcán Laguna — foto 4",
+    "width": 1600,
+    "height": 1200
+  },
+  "/images/retiros/alkimiya-sagrada/alkimiya-sagrada-05.jpg": {
+    "alt": "Alkimiya Sagrada, retiro en Volcán Laguna — foto 5",
+    "width": 1200,
+    "height": 1600
+  },
+  "/images/retiros/alkimiya-sagrada/alkimiya-sagrada-06.jpg": {
+    "alt": "Alkimiya Sagrada, retiro en Volcán Laguna — foto 6",
+    "width": 1600,
+    "height": 1200
+  },
+  "/images/retiros/alkimiya-sagrada/alkimiya-sagrada-07.jpg": {
+    "alt": "Alkimiya Sagrada, retiro en Volcán Laguna — foto 7",
+    "width": 1200,
+    "height": 1600
+  },
+  "/images/retiros/alkimiya-sagrada/alkimiya-sagrada-08.jpg": {
+    "alt": "Alkimiya Sagrada, retiro en Volcán Laguna — foto 8",
+    "width": 1600,
+    "height": 1200
+  },
+  "/images/retiros/alkimiya-sagrada/alkimiya-sagrada-09.jpg": {
+    "alt": "Alkimiya Sagrada, retiro en Volcán Laguna — foto 9",
+    "width": 1600,
+    "height": 1200
+  },
+  "/images/retiros/bihanafit/bihanafit-01.jpg": {
+    "alt": "Bihanafit, retiro en Volcán Laguna — foto 1",
+    "width": 1920,
+    "height": 1280
+  },
+  "/images/retiros/bihanafit/bihanafit-02.jpg": {
+    "alt": "Bihanafit, retiro en Volcán Laguna — foto 2",
+    "width": 1280,
+    "height": 1920
+  },
+  "/images/retiros/bihanafit/bihanafit-03.jpg": {
+    "alt": "Bihanafit, retiro en Volcán Laguna — foto 3",
+    "width": 1280,
+    "height": 1920
+  },
+  "/images/retiros/bihanafit/bihanafit-04.jpg": {
+    "alt": "Bihanafit, retiro en Volcán Laguna — foto 4",
+    "width": 1280,
+    "height": 1920
+  },
+  "/images/retiros/bihanafit/bihanafit-05.jpg": {
+    "alt": "Bihanafit, retiro en Volcán Laguna — foto 5",
+    "width": 1280,
+    "height": 1920
+  },
+  "/images/retiros/bihanafit/bihanafit-06.jpg": {
+    "alt": "Bihanafit, retiro en Volcán Laguna — foto 6",
+    "width": 1280,
+    "height": 1920
+  },
+  "/images/retiros/bihanafit/bihanafit-07.jpg": {
+    "alt": "Bihanafit, retiro en Volcán Laguna — foto 7",
+    "width": 1280,
+    "height": 1920
+  },
+  "/images/retiros/bihanafit/bihanafit-08.jpg": {
+    "alt": "Bihanafit, retiro en Volcán Laguna — foto 8",
+    "width": 1271,
+    "height": 1920
+  },
+  "/images/retiros/bihanafit/bihanafit-09.jpg": {
+    "alt": "Bihanafit, retiro en Volcán Laguna — foto 9",
+    "width": 1920,
+    "height": 1280
+  },
+  "/images/retiros/bihanafit/bihanafit-10.jpg": {
+    "alt": "Bihanafit, retiro en Volcán Laguna — foto 10",
+    "width": 1280,
+    "height": 1920
+  },
+  "/images/retiros/bihanafit/bihanafit-11.jpg": {
+    "alt": "Bihanafit, retiro en Volcán Laguna — foto 11",
+    "width": 1920,
+    "height": 1280
+  },
+  "/images/retiros/bihanafit/bihanafit-12.jpg": {
+    "alt": "Bihanafit, retiro en Volcán Laguna — foto 12",
+    "width": 1920,
+    "height": 1280
+  },
+  "/images/retiros/bihanafit/bihanafit-13.jpg": {
+    "alt": "Bihanafit, retiro en Volcán Laguna — foto 13",
+    "width": 1920,
+    "height": 1280
+  },
+  "/images/retiros/bihanafit/bihanafit-14.jpg": {
+    "alt": "Bihanafit, retiro en Volcán Laguna — foto 14",
+    "width": 1280,
+    "height": 1920
+  },
+  "/images/retiros/bihanafit/bihanafit-15.jpg": {
+    "alt": "Bihanafit, retiro en Volcán Laguna — foto 15",
+    "width": 1280,
+    "height": 1920
+  },
+  "/images/retiros/bihanafit/bihanafit-16.jpg": {
+    "alt": "Bihanafit, retiro en Volcán Laguna — foto 16",
+    "width": 1342,
+    "height": 1920
+  },
+  "/images/retiros/bihanafit/bihanafit-17.jpg": {
+    "alt": "Bihanafit, retiro en Volcán Laguna — foto 17",
+    "width": 1280,
+    "height": 1920
+  },
+  "/images/retiros/bihanafit/bihanafit-18.jpg": {
+    "alt": "Bihanafit, retiro en Volcán Laguna — foto 18",
+    "width": 1280,
+    "height": 1920
+  },
+  "/images/retiros/bihanafit/bihanafit-19.jpg": {
+    "alt": "Bihanafit, retiro en Volcán Laguna — foto 19",
+    "width": 1920,
+    "height": 1280
+  },
+  "/images/retiros/bihanafit/bihanafit-20.jpg": {
+    "alt": "Bihanafit, retiro en Volcán Laguna — foto 20",
+    "width": 1920,
+    "height": 1280
+  },
+  "/images/retiros/certificacion-yoga-paco/certificacion-yoga-paco-01.jpg": {
+    "alt": "Certificación de Yoga con Paco, retiro en Volcán Laguna — foto 1",
+    "width": 1600,
+    "height": 1200
+  },
+  "/images/retiros/certificacion-yoga-paco/certificacion-yoga-paco-02.jpg": {
+    "alt": "Certificación de Yoga con Paco, retiro en Volcán Laguna — foto 2",
+    "width": 1600,
+    "height": 1200
+  },
+  "/images/retiros/certificacion-yoga-paco/certificacion-yoga-paco-03.jpg": {
+    "alt": "Certificación de Yoga con Paco, retiro en Volcán Laguna — foto 3",
+    "width": 1600,
+    "height": 1200
+  },
+  "/images/retiros/certificacion-yoga-paco/certificacion-yoga-paco-04.jpg": {
+    "alt": "Certificación de Yoga con Paco, retiro en Volcán Laguna — foto 4",
+    "width": 1200,
+    "height": 1600
+  },
+  "/images/retiros/certificacion-yoga-paco/certificacion-yoga-paco-05.jpg": {
+    "alt": "Certificación de Yoga con Paco, retiro en Volcán Laguna — foto 5",
+    "width": 1600,
+    "height": 1200
+  },
+  "/images/retiros/certificacion-yoga-paco/certificacion-yoga-paco-06.jpg": {
+    "alt": "Certificación de Yoga con Paco, retiro en Volcán Laguna — foto 6",
+    "width": 1600,
+    "height": 1200
+  },
+  "/images/retiros/certificacion-yoga-paco/certificacion-yoga-paco-07.jpg": {
+    "alt": "Certificación de Yoga con Paco, retiro en Volcán Laguna — foto 7",
+    "width": 1200,
+    "height": 1600
+  },
+  "/images/retiros/certificacion-yoga-paco/certificacion-yoga-paco-08.jpg": {
+    "alt": "Certificación de Yoga con Paco, retiro en Volcán Laguna — foto 8",
+    "width": 1200,
+    "height": 1600
+  },
+  "/images/retiros/certificacion-yoga-paco/certificacion-yoga-paco-09.jpg": {
+    "alt": "Certificación de Yoga con Paco, retiro en Volcán Laguna — foto 9",
+    "width": 1600,
+    "height": 1200
+  },
+  "/images/retiros/familias-musicales/familias-musicales-01.jpg": {
+    "alt": "Familias Musicales, retiro en Volcán Laguna — foto 1",
+    "width": 1280,
+    "height": 960
+  },
+  "/images/retiros/familias-musicales/familias-musicales-02.jpg": {
+    "alt": "Familias Musicales, retiro en Volcán Laguna — foto 2",
+    "width": 1600,
+    "height": 1200
+  },
+  "/images/retiros/familias-musicales/familias-musicales-03.jpg": {
+    "alt": "Familias Musicales, retiro en Volcán Laguna — foto 3",
+    "width": 1200,
+    "height": 1600
+  },
+  "/images/retiros/familias-musicales/familias-musicales-04.jpg": {
+    "alt": "Familias Musicales, retiro en Volcán Laguna — foto 4",
+    "width": 1200,
+    "height": 1600
+  },
+  "/images/retiros/familias-musicales/familias-musicales-05.jpg": {
+    "alt": "Familias Musicales, retiro en Volcán Laguna — foto 5",
+    "width": 1200,
+    "height": 1600
+  },
+  "/images/retiros/familias-musicales/familias-musicales-06.jpg": {
+    "alt": "Familias Musicales, retiro en Volcán Laguna — foto 6",
+    "width": 960,
+    "height": 1280
+  },
+  "/images/retiros/familias-musicales/familias-musicales-07.jpg": {
+    "alt": "Familias Musicales, retiro en Volcán Laguna — foto 7",
+    "width": 1200,
+    "height": 1600
+  },
+  "/images/retiros/familias-musicales/familias-musicales-08.jpg": {
+    "alt": "Familias Musicales, retiro en Volcán Laguna — foto 8",
+    "width": 1600,
+    "height": 1200
+  },
+  "/images/retiros/familias-musicales/familias-musicales-09.jpg": {
+    "alt": "Familias Musicales, retiro en Volcán Laguna — foto 9",
+    "width": 1600,
+    "height": 1200
+  },
+  "/images/retiros/familias-musicales/familias-musicales-10.jpg": {
+    "alt": "Familias Musicales, retiro en Volcán Laguna — foto 10",
+    "width": 1600,
+    "height": 1200
+  },
+  "/images/retiros/familias-musicales/familias-musicales-11.jpg": {
+    "alt": "Familias Musicales, retiro en Volcán Laguna — foto 11",
+    "width": 1600,
+    "height": 1200
+  },
+  "/images/retiros/familias-musicales/familias-musicales-12.jpg": {
+    "alt": "Familias Musicales, retiro en Volcán Laguna — foto 12",
+    "width": 1600,
+    "height": 1200
+  },
+  "/images/retiros/friendsgiving-taitas/friendsgiving-taitas-01.jpg": {
+    "alt": "Friendsgiving con Taitas, retiro en Volcán Laguna — foto 1",
+    "width": 1600,
+    "height": 1200
+  },
+  "/images/retiros/friendsgiving-taitas/friendsgiving-taitas-02.jpg": {
+    "alt": "Friendsgiving con Taitas, retiro en Volcán Laguna — foto 2",
+    "width": 1200,
+    "height": 1600
+  },
+  "/images/retiros/friendsgiving-taitas/friendsgiving-taitas-03.jpg": {
+    "alt": "Friendsgiving con Taitas, retiro en Volcán Laguna — foto 3",
+    "width": 1200,
+    "height": 1600
+  },
+  "/images/retiros/friendsgiving-taitas/friendsgiving-taitas-04.jpg": {
+    "alt": "Friendsgiving con Taitas, retiro en Volcán Laguna — foto 4",
+    "width": 1600,
+    "height": 1200
+  },
+  "/images/retiros/friendsgiving-taitas/friendsgiving-taitas-05.jpg": {
+    "alt": "Friendsgiving con Taitas, retiro en Volcán Laguna — foto 5",
+    "width": 1600,
+    "height": 1200
+  },
+  "/images/retiros/friendsgiving-taitas/friendsgiving-taitas-06.jpg": {
+    "alt": "Friendsgiving con Taitas, retiro en Volcán Laguna — foto 6",
+    "width": 1600,
+    "height": 1200
+  },
+  "/images/retiros/friendsgiving-taitas/friendsgiving-taitas-07.jpg": {
+    "alt": "Friendsgiving con Taitas, retiro en Volcán Laguna — foto 7",
+    "width": 1200,
+    "height": 1600
+  },
+  "/images/retiros/friendsgiving-taitas/friendsgiving-taitas-08.jpg": {
+    "alt": "Friendsgiving con Taitas, retiro en Volcán Laguna — foto 8",
+    "width": 1600,
+    "height": 1200
+  },
+  "/images/retiros/friendsgiving-taitas/friendsgiving-taitas-09.jpg": {
+    "alt": "Friendsgiving con Taitas, retiro en Volcán Laguna — foto 9",
+    "width": 1200,
+    "height": 1600
+  },
+  "/images/retiros/friendsgiving-taitas/friendsgiving-taitas-10.jpg": {
+    "alt": "Friendsgiving con Taitas, retiro en Volcán Laguna — foto 10",
+    "width": 1200,
+    "height": 1600
+  },
+  "/images/retiros/friendsgiving-taitas/friendsgiving-taitas-11.jpg": {
+    "alt": "Friendsgiving con Taitas, retiro en Volcán Laguna — foto 11",
+    "width": 1600,
+    "height": 1200
+  },
+  "/images/retiros/friendsgiving-taitas/friendsgiving-taitas-12.jpg": {
+    "alt": "Friendsgiving con Taitas, retiro en Volcán Laguna — foto 12",
+    "width": 1200,
+    "height": 1600
+  },
+  "/images/retiros/friendsgiving-taitas/friendsgiving-taitas-13.jpg": {
+    "alt": "Friendsgiving con Taitas, retiro en Volcán Laguna — foto 13",
+    "width": 1200,
+    "height": 1600
+  },
+  "/images/retiros/friendsgiving-taitas/friendsgiving-taitas-14.jpg": {
+    "alt": "Friendsgiving con Taitas, retiro en Volcán Laguna — foto 14",
+    "width": 1200,
+    "height": 1600
+  },
+  "/images/retiros/friendsgiving-taitas/friendsgiving-taitas-15.jpg": {
+    "alt": "Friendsgiving con Taitas, retiro en Volcán Laguna — foto 15",
+    "width": 1600,
+    "height": 1200
+  },
+  "/images/retiros/friendsgiving-taitas/friendsgiving-taitas-16.jpg": {
+    "alt": "Friendsgiving con Taitas, retiro en Volcán Laguna — foto 16",
+    "width": 1200,
+    "height": 1600
+  },
+  "/images/retiros/friendsgiving-taitas/friendsgiving-taitas-17.jpg": {
+    "alt": "Friendsgiving con Taitas, retiro en Volcán Laguna — foto 17",
+    "width": 1200,
+    "height": 1600
+  },
+  "/images/retiros/friendsgiving-taitas/friendsgiving-taitas-18.jpg": {
+    "alt": "Friendsgiving con Taitas, retiro en Volcán Laguna — foto 18",
+    "width": 1200,
+    "height": 1600
+  },
+  "/images/retiros/friendsgiving-taitas/friendsgiving-taitas-19.jpg": {
+    "alt": "Friendsgiving con Taitas, retiro en Volcán Laguna — foto 19",
+    "width": 1200,
+    "height": 1600
+  },
+  "/images/retiros/friendsgiving-taitas/friendsgiving-taitas-20.jpg": {
+    "alt": "Friendsgiving con Taitas, retiro en Volcán Laguna — foto 20",
+    "width": 1600,
+    "height": 1200
+  },
+  "/images/retiros/quantum-yoga/quantum-yoga-01.jpg": {
+    "alt": "Quantum Yoga, retiro en Volcán Laguna — foto 1",
+    "width": 1600,
+    "height": 900
+  },
+  "/images/retiros/quantum-yoga/quantum-yoga-02.jpg": {
+    "alt": "Quantum Yoga, retiro en Volcán Laguna — foto 2",
+    "width": 900,
+    "height": 1600
+  },
+  "/images/retiros/quantum-yoga/quantum-yoga-03.jpg": {
+    "alt": "Quantum Yoga, retiro en Volcán Laguna — foto 3",
+    "width": 1600,
+    "height": 900
+  },
+  "/images/retiros/quantum-yoga/quantum-yoga-04.jpg": {
+    "alt": "Quantum Yoga, retiro en Volcán Laguna — foto 4",
+    "width": 1600,
+    "height": 900
+  },
+  "/images/retiros/quantum-yoga/quantum-yoga-05.jpg": {
+    "alt": "Quantum Yoga, retiro en Volcán Laguna — foto 5",
+    "width": 900,
+    "height": 1600
+  },
+  "/images/retiros/quantum-yoga/quantum-yoga-06.jpg": {
+    "alt": "Quantum Yoga, retiro en Volcán Laguna — foto 6",
+    "width": 900,
+    "height": 1600
+  },
+  "/images/retiros/quantum-yoga/quantum-yoga-07.jpg": {
+    "alt": "Quantum Yoga, retiro en Volcán Laguna — foto 7",
+    "width": 1600,
+    "height": 900
+  },
+  "/images/retiros/quantum-yoga/quantum-yoga-08.jpg": {
+    "alt": "Quantum Yoga, retiro en Volcán Laguna — foto 8",
+    "width": 900,
+    "height": 1600
+  },
+  "/images/retiros/raksha-yoga/raksha-yoga-01.jpg": {
+    "alt": "Raksha Yoga, retiro en Volcán Laguna — foto 1",
+    "width": 960,
+    "height": 1280
+  },
+  "/images/retiros/raksha-yoga/raksha-yoga-02.jpg": {
+    "alt": "Raksha Yoga, retiro en Volcán Laguna — foto 2",
+    "width": 960,
+    "height": 1280
+  },
+  "/images/retiros/raksha-yoga/raksha-yoga-03.jpg": {
+    "alt": "Raksha Yoga, retiro en Volcán Laguna — foto 3",
+    "width": 960,
+    "height": 1280
+  },
+  "/images/retiros/raksha-yoga/raksha-yoga-04.jpg": {
+    "alt": "Raksha Yoga, retiro en Volcán Laguna — foto 4",
+    "width": 1280,
+    "height": 960
+  },
+  "/images/retiros/raksha-yoga/raksha-yoga-05.jpg": {
+    "alt": "Raksha Yoga, retiro en Volcán Laguna — foto 5",
+    "width": 1280,
+    "height": 960
+  },
+  "/images/retiros/raksha-yoga/raksha-yoga-06.jpg": {
+    "alt": "Raksha Yoga, retiro en Volcán Laguna — foto 6",
+    "width": 1280,
+    "height": 960
+  },
+  "/images/retiros/raksha-yoga/raksha-yoga-07.jpg": {
+    "alt": "Raksha Yoga, retiro en Volcán Laguna — foto 7",
+    "width": 1280,
+    "height": 960
+  },
+  "/images/retiros/raksha-yoga/raksha-yoga-08.jpg": {
+    "alt": "Raksha Yoga, retiro en Volcán Laguna — foto 8",
+    "width": 960,
+    "height": 1280
+  },
+  "/images/retiros/raksha-yoga/raksha-yoga-09.jpg": {
+    "alt": "Raksha Yoga, retiro en Volcán Laguna — foto 9",
+    "width": 1280,
+    "height": 960
+  },
+  "/images/retiros/raksha-yoga/raksha-yoga-10.jpg": {
+    "alt": "Raksha Yoga, retiro en Volcán Laguna — foto 10",
+    "width": 1280,
+    "height": 960
+  },
+  "/images/retiros/raksha-yoga/raksha-yoga-11.jpg": {
+    "alt": "Raksha Yoga, retiro en Volcán Laguna — foto 11",
+    "width": 1280,
+    "height": 960
+  },
+  "/images/retiros/raksha-yoga/raksha-yoga-12.jpg": {
+    "alt": "Raksha Yoga, retiro en Volcán Laguna — foto 12",
+    "width": 1280,
+    "height": 960
+  },
+  "/images/retiros/retiro-para-mujeres/retiro-para-mujeres-01.jpg": {
+    "alt": "Retiro para Mujeres, retiro en Volcán Laguna — foto 1",
+    "width": 1600,
+    "height": 1200
+  },
+  "/images/retiros/retiro-para-mujeres/retiro-para-mujeres-02.jpg": {
+    "alt": "Retiro para Mujeres, retiro en Volcán Laguna — foto 2",
+    "width": 1600,
+    "height": 1200
+  },
+  "/images/retiros/retiro-para-mujeres/retiro-para-mujeres-03.jpg": {
+    "alt": "Retiro para Mujeres, retiro en Volcán Laguna — foto 3",
+    "width": 1600,
+    "height": 1200
+  },
+  "/images/retiros/retiro-para-mujeres/retiro-para-mujeres-04.jpg": {
+    "alt": "Retiro para Mujeres, retiro en Volcán Laguna — foto 4",
+    "width": 1200,
+    "height": 1600
+  },
+  "/images/retiros/retiro-para-mujeres/retiro-para-mujeres-05.jpg": {
+    "alt": "Retiro para Mujeres, retiro en Volcán Laguna — foto 5",
+    "width": 1600,
+    "height": 1200
+  },
+  "/images/retiros/retiro-para-mujeres/retiro-para-mujeres-06.jpg": {
+    "alt": "Retiro para Mujeres, retiro en Volcán Laguna — foto 6",
+    "width": 1600,
+    "height": 1200
+  },
+  "/images/retiros/retiro-para-mujeres/retiro-para-mujeres-07.jpg": {
+    "alt": "Retiro para Mujeres, retiro en Volcán Laguna — foto 7",
+    "width": 1200,
+    "height": 1600
+  },
+  "/images/santuario/santuario-01-vista-aerea-jacuzzi-lago.jpg": {
+    "alt": "Vista aérea jacuzzi lago, Casa Santuario",
+    "width": 1920,
+    "height": 1083
+  },
+  "/images/santuario/santuario-02-muelle-privado-lago.jpg": {
+    "alt": "Muelle privado lago, Casa Santuario",
+    "width": 1920,
+    "height": 1083
+  },
+  "/images/santuario/santuario-03-muelle-amanecer.jpg": {
+    "alt": "Muelle amanecer, Casa Santuario",
+    "width": 1920,
+    "height": 1083
+  },
+  "/images/santuario/santuario-04-jacuzzi-vista-lago.jpg": {
+    "alt": "Jacuzzi vista lago, Casa Santuario",
+    "width": 1920,
+    "height": 1280
+  },
+  "/images/santuario/santuario-05-jacuzzi-sombra.jpg": {
+    "alt": "Jacuzzi sombra, Casa Santuario",
+    "width": 1920,
+    "height": 1280
+  },
+  "/images/santuario/santuario-06-jacuzzi-noche.jpg": {
+    "alt": "Jacuzzi noche, Casa Santuario",
+    "width": 1920,
+    "height": 1280
+  },
+  "/images/santuario/santuario-07-terraza-frente-al-lago.jpg": {
+    "alt": "Terraza frente al lago, Casa Santuario",
+    "width": 1920,
+    "height": 1282
+  },
+  "/images/santuario/santuario-08-comedor-exterior.jpg": {
+    "alt": "Comedor exterior, Casa Santuario",
+    "width": 1282,
+    "height": 1920
+  },
+  "/images/santuario/santuario-09-estancia-comedor-noche.jpg": {
+    "alt": "Estancia comedor noche, Casa Santuario",
+    "width": 1920,
+    "height": 1280
+  },
+  "/images/santuario/santuario-10-jardin-noche.jpg": {
+    "alt": "Jardín noche, Casa Santuario",
+    "width": 1280,
+    "height": 1920
+  },
+  "/images/santuario/santuario-11-sala.jpg": {
+    "alt": "Sala, Casa Santuario",
+    "width": 1920,
+    "height": 1280
+  },
+  "/images/santuario/santuario-12-cocina-equipada.jpg": {
+    "alt": "Cocina equipada, Casa Santuario",
+    "width": 1920,
+    "height": 1440
+  },
+  "/images/santuario/santuario-13-recamara-principal.jpg": {
+    "alt": "Recámara principal, Casa Santuario",
+    "width": 1920,
+    "height": 1280
+  },
+  "/images/santuario/santuario-14-recamara-principal-noche.jpg": {
+    "alt": "Recámara principal noche, Casa Santuario",
+    "width": 1920,
+    "height": 1280
+  },
+  "/images/santuario/santuario-15-bano-principal.jpg": {
+    "alt": "Baño principal, Casa Santuario",
+    "width": 1282,
+    "height": 1920
+  },
+  "/images/santuario/santuario-16-vista-al-lago.jpg": {
+    "alt": "Vista al lago, Casa Santuario",
+    "width": 1920,
+    "height": 1282
+  },
+  "/images/santuario/santuario-17-recamara.jpg": {
+    "alt": "Recámara, Casa Santuario",
+    "width": 1920,
+    "height": 1282
+  },
+  "/images/santuario/santuario-18-recamara-tocador.jpg": {
+    "alt": "Recámara tocador, Casa Santuario",
+    "width": 1920,
+    "height": 1280
+  }
+}
