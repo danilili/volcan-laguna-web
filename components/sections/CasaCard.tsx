@@ -4,24 +4,22 @@ import { cn } from "@/lib/cn";
 import type { Casa } from "@/lib/content";
 import { formatMXN } from "@/lib/format";
 import { CasaDatos } from "./CasaDatos";
+import { EtiquetaVariante } from "./EtiquetaVariante";
 
 /**
- * House card. Shows the normal nightly rate (week 2: live price from Beds24;
- * the site never computes prices).
+ * House card. Shows the reference nightly rate from the house's file; the
+ * live total always comes from Beds24 on /reservar. "Para 4" variants carry
+ * a tag that Beds24 flips to "¡Este fin de semana disponible!" when Bea
+ * opens the coming weekend (see EtiquetaVariante).
  */
 type Props = {
   casa: Casa;
   alt: string;
   className?: string;
   priority?: boolean;
-  /**
-   * "Para 4" variants only: true when Beds24 has opened this weekend (the
-   * full house is still free one week out). Week 2 feeds it; false for now.
-   */
-  finDeSemanaAbierto?: boolean;
 };
 
-export function CasaCard({ casa, alt, className, priority = false, finDeSemanaAbierto = false }: Props) {
+export function CasaCard({ casa, alt, className, priority = false }: Props) {
   const variante = !!casa.padre;
   return (
     <Link
@@ -43,17 +41,7 @@ export function CasaCard({ casa, alt, className, priority = false, finDeSemanaAb
         <span className="absolute top-3 left-3 rounded-pill bg-crema-50/90 px-2.5 py-1 text-xs font-medium text-laguna-900 backdrop-blur-sm">
           Hasta {casa.capacidad} personas
         </span>
-        {variante ? (
-          finDeSemanaAbierto ? (
-            <span className="absolute top-3 right-3 rounded-pill bg-selva-600 px-2.5 py-1 text-xs font-medium text-crema-50 shadow-float">
-              ¡Este fin de semana disponible!
-            </span>
-          ) : (
-            <span className="absolute top-3 right-3 rounded-pill bg-arena-500 px-2.5 py-1 text-xs font-medium text-laguna-950">
-              Lun–jue
-            </span>
-          )
-        ) : null}
+        {variante ? <EtiquetaVariante slug={casa.slug} className="absolute top-3 right-3" /> : null}
       </span>
       <span className="flex flex-1 flex-col p-4 sm:p-5">
         <span className="font-display text-2xl leading-tight text-laguna-900">{casa.nombre}</span>
