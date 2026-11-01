@@ -81,6 +81,13 @@ export default async function CasaPage({ params }: PageProps<"/casas/[slug]">) {
               ))}
             </ul>
 
+            {casa.importante ? (
+              <p className="mt-6 rounded-lg border-l-4 border-arena-500 bg-arena-100 px-4 py-3 text-sm text-ink-900">
+                <span className="font-medium">Importante: </span>
+                {casa.importante}
+              </p>
+            ) : null}
+
             {/* What the stay includes and what is booked separately */}
             <CasaServicios casa={casa} />
 

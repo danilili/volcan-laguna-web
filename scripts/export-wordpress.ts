@@ -1385,14 +1385,10 @@ async function exportHouses(
       amenidades: deriveAmenities(room, plain),
       galeria: galleryFiles.map((f) => ({ src: f.publicPath, alt: manifest[f.publicPath]?.alt ?? "" })),
     };
-    const comments: Record<string, string> = {};
-    if (bathrooms === null) comments.banos = "TODO: no aparece en el staging; confirmar con Bea";
-    else if (house.parentSlug) comments.banos = "TODO: solo los baños mencionados en el texto; confirmar con Bea";
-
-    let mdx = frontmatter(data, comments);
-    if (house.parentSlug) {
-      mdx += `\n{/* TODO: el staging usa la misma galería que ${house.nombre.replace(" para 4", "")}; aquí va un subconjunto elegido por nombre de archivo. Revisar con Bea qué fotos corresponden a las dos recámaras que se abren. */}\n`;
-    }
+    // Bathrooms and the gallery of the "para 4" variants were confirmed by Bea
+    // by hand in content/ (see git history); re-running this script would
+    // overwrite them, which is why it is a one-off.
+    let mdx = frontmatter(data);
     mdx += `\n${body}\n`;
     fs.writeFileSync(path.join(outDir, `${house.slug}.mdx`), mdx);
     routeMap[`/accommodation/${room.slug}`] = `/casas/${house.slug}`;
@@ -1759,7 +1755,7 @@ async function main(): Promise<void> {
   // 7. Summary.
   const withStagingAlt = Object.values(manifest).filter((e) => e.altFromStaging).length;
   console.log("\nDone.");
-  console.log(`  casas: ${houses.length} (baños TODO: ${houses.filter((h) => h.banosTodo).map((h) => h.slug).join(", ") || "none"})`);
+  console.log(`  casas: ${houses.length} (sin baños en el staging: ${houses.filter((h) => h.banosTodo).map((h) => h.slug).join(", ") || "none"})`);
   console.log(`  retiros: ${retreats.filter((r) => r.estado === "pasado").length} pasados, ${retreats.filter((r) => r.estado === "proximo").length} próximos`);
   console.log(`  retiros sin fotos: ${sinFotos.join(", ") || "none"}; sin fechas: ${sinFechas.join(", ") || "none"}`);
   console.log(`  imágenes: ${disk.length} (alt del staging: ${withStagingAlt}, alt generado: ${disk.length - withStagingAlt})`);

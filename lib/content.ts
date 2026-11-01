@@ -28,6 +28,8 @@ export type Casa = {
   /** Mon–Thu reference rate. Internal: never displayed. */
   precioLunJue: number;
   resumen: string;
+  /** Short notice shown on the page (e.g. who counts as a guest). */
+  importante?: string;
   imagenPrincipal: string;
   amenidades: string[];
   galeria: Imagen[];
