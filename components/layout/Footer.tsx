@@ -87,6 +87,10 @@ export function Footer() {
               </span>
             </li>
             <li className="flex items-start gap-2">
+              <Icon name="musica" size={18} className="mt-0.5 text-arena-500" />
+              <span>Música a volumen moderado y hasta las 12 de la noche</span>
+            </li>
+            <li className="flex items-start gap-2">
               <Icon name="check" size={18} className="mt-0.5 text-arena-500" />
               <span>Sin mascotas · No se fuma dentro</span>
             </li>

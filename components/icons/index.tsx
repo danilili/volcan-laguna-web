@@ -202,6 +202,13 @@ export const icons = {
       <path d="M8 20h8" />
     </>,
   ),
+  musica: make(
+    <>
+      <path d="M9 18V6l10-2v12" />
+      <circle cx="6.5" cy="18" r="2.5" />
+      <circle cx="16.5" cy="16" r="2.5" />
+    </>,
+  ),
   whatsapp: make(
     <>
       <path d="M3 21l1.5-4.5A9 9 0 1 1 8 19.5L3 21Z" />

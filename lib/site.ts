@@ -31,6 +31,7 @@ export const site = {
     "Sin internet en ninguna casa",
     "Sin mascotas",
     "No se fuma dentro",
+    "Música a volumen moderado y hasta las 12 de la noche",
     "Estancia mínima 2 noches (3 en Semana Santa y del 18 dic al 3 ene)",
   ],
   /** Bea's words on the no-Wi-Fi choice; shown next to "Sin internet" everywhere. */
