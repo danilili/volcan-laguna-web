@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Mdx } from "@/components/content/Mdx";
+import { CasaServicios } from "@/components/sections/CasaServicios";
 import { CasaVideo } from "@/components/sections/CasaVideo";
 import { amenityIcon, amenityLabel } from "@/components/icons";
 import { Button } from "@/components/ui/Button";
@@ -13,6 +14,13 @@ import { Section } from "@/components/ui/Section";
 import { getCasa, getCasas, getImagen, getVariantes } from "@/lib/content";
 import { formatMXN } from "@/lib/format";
 import { site, whatsappUrl } from "@/lib/site";
+
+/** Amenities already shown in the key facts or the "Incluido" block, plus kitchen gear folded into "cocina equipada". */
+const AMENIDADES_CUBIERTAS = new Set([
+  "laguna", "lago", "muelle", "kayak", "kayaks", "cocina", "recamara", "recamaras", "bano", "banos",
+  "estacionamiento", "jardin", "terraza", "chimenea", "jacuzzi", "limpieza", "yoga",
+  "tostador", "especias", "licuadora", "microondas", "detector-de-humo", "cafetera", "estufa", "refrigerador",
+]);
 
 export function generateStaticParams() {
   return getCasas().map((c) => ({ slug: c.slug }));
@@ -38,6 +46,7 @@ export default async function CasaPage({ params }: PageProps<"/casas/[slug]">) {
   const galeria = casa.galeria.filter((g) => g.src !== casa.imagenPrincipal).slice(0, 8);
   const variantes = getVariantes(casa.slug);
   const padre = casa.padre ? getCasa(casa.padre) : null;
+  const extras = casa.amenidades.filter((a) => !AMENIDADES_CUBIERTAS.has(a));
 
   const datos = [
     { icon: "personas" as const, label: `Hasta ${casa.capacidad} personas` },
@@ -72,12 +81,15 @@ export default async function CasaPage({ params }: PageProps<"/casas/[slug]">) {
               ))}
             </ul>
 
-            {/* Amenities */}
-            {casa.amenidades.length ? (
-              <ul className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3">
-                {casa.amenidades.map((a) => (
-                  <li key={a} className="inline-flex items-center gap-2 text-sm text-ink-700">
-                    <Icon name={amenityIcon[a] ?? "check"} size={22} className="text-selva-600" />
+            {/* What the stay includes and what is booked separately */}
+            <CasaServicios casa={casa} />
+
+            {/* Remaining amenities not already covered above */}
+            {extras.length ? (
+              <ul className="mt-4 flex flex-wrap gap-2">
+                {extras.map((a) => (
+                  <li key={a} className="inline-flex items-center gap-1.5 rounded-pill border border-laguna-800/15 px-3 py-1.5 text-xs text-ink-700">
+                    <Icon name={amenityIcon[a] ?? "check"} size={16} className="text-selva-600" />
                     {amenityLabel[a] ?? a.replace(/-/g, " ")}
                   </li>
                 ))}

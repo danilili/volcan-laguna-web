@@ -173,6 +173,35 @@ export const icons = {
     </>,
   ),
   /* ---- Contacto y UI ---- */
+  casa: make(
+    <>
+      <path d="M4 11.5 12 4l8 7.5" />
+      <path d="M6.5 10v10h11V10" />
+      <path d="M10 20v-5h4v5" />
+    </>,
+  ),
+  paddleboard: make(
+    <>
+      <circle cx="11" cy="4" r="1.5" />
+      <path d="M11 6.5v6" />
+      <path d="M11 8.5l4 2.5v5.5" />
+      <path d="M4 16h16a1.5 1.5 0 0 1 0 3H4a1.5 1.5 0 0 1 0-3z" />
+    </>,
+  ),
+  cascada: make(
+    <>
+      <path d="M5 4h14" />
+      <path d="M8 4v8M12 4v10M16 4v8" />
+      <path d="M3 18c2 0 2 1.5 4 1.5s2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5 2 1.5 2 1.5" />
+    </>,
+  ),
+  alimentos: make(
+    <>
+      <path d="M4 13h16a8 8 0 0 1-16 0z" />
+      <path d="M12 13V9c0-2.5 2-4.5 5-4.5 0 3-2 5-5 5" />
+      <path d="M8 20h8" />
+    </>,
+  ),
   whatsapp: make(
     <>
       <path d="M3 21l1.5-4.5A9 9 0 1 1 8 19.5L3 21Z" />
@@ -302,4 +331,7 @@ export const amenityLabel: Record<string, string> = {
   terraza: "Terraza",
   vista: "Vista al lago",
   "sin-internet": "Sin internet",
+  "comedor-exterior": "Comedor exterior",
+  "entrada-autonoma": "Entrada autónoma",
+  pantalla: "Pantalla",
 };
