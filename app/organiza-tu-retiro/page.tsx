@@ -17,7 +17,7 @@ export default function OrganizaTuRetiroPage() {
       slug="organiza-tu-retiro"
       fallbackTitle="Organiza tu retiro"
       eyebrow="Para facilitadores"
-      image="/images/general/retiros-02-salon-chimenea.jpg"
+      image="/images/general/retiros-05-muelle-ceremonia-atardecer.jpg"
       size="tall"
       heroChildren={
         <Button href={whatsappUrl("Hola, quiero cotizar un retiro en Volcán Laguna.")} variant="whatsapp" size="lg">

@@ -7,7 +7,7 @@ import { getImagen } from "@/lib/content";
 import { formatDateRange } from "@/lib/format";
 
 export function Retiros({ titulo, texto, proximo }: { titulo: string; texto?: string; proximo: Retiro | null }) {
-  const foto = getImagen(proximo?.imagenes[0]?.src ?? "/images/general/retiros-02-salon-chimenea.jpg", "Retiro en Volcán Laguna");
+  const foto = getImagen("/images/general/retiros-05-muelle-ceremonia-atardecer.jpg", "Ceremonia al atardecer en el muelle de Volcán Laguna");
   return (
     <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
       <Reveal className="relative aspect-[4/3] overflow-hidden rounded-card shadow-card lg:order-2">

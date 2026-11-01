@@ -40,11 +40,17 @@ function RetiroCard({ r, i }: { r: Retiro; i: number }) {
 export default function RetirosPage() {
   const proximos = getRetirosProximos();
   const pasados = getRetirosPasados();
-  const hero = getImagen("/images/general/retiros-01-tapetes-yoga.jpg", "Tapetes de yoga frente a la laguna");
+  const hero = getImagen("/images/general/retiros-05-muelle-ceremonia-atardecer.jpg", "Ceremonia al atardecer en el muelle de Volcán Laguna");
 
   return (
     <>
-      <PageHero eyebrow="Retiros" title="Un lugar para volver a ti" lede="Yoga, silencio, comunidad. Las tres casas y la laguna para tu grupo." image={hero}>
+      <PageHero
+        eyebrow="Retiros"
+        title="Un lugar para volver a ti"
+        lede="Ofrecemos hospedaje, gastronomía y toda la logística para que maestros y facilitadores creen experiencias transformadoras en un santuario de conexión con la naturaleza."
+        image={hero}
+        size="tall"
+      >
         <Button href="/organiza-tu-retiro" size="lg">
           Organiza tu retiro
         </Button>
