@@ -43,11 +43,13 @@ const components = {
   },
 };
 
-export function Mdx({ source, className }: { source: string; className?: string }) {
+export type MdxOverrides = ComponentProps<typeof MDXRemote>["components"];
+
+export function Mdx({ source, className, overrides }: { source: string; className?: string; overrides?: MdxOverrides }) {
   if (!source.trim()) return null;
   return (
     <div className={cn("prose-vl", className)}>
-      <MDXRemote source={source} components={components} />
+      <MDXRemote source={source} components={{ ...components, ...overrides }} />
     </div>
   );
 }

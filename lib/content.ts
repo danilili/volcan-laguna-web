@@ -159,6 +159,24 @@ export function getPagina(slug: string): Pagina | null {
   return { slug, ...parsed.data, actualizado: toDateString(parsed.data.actualizado), body: parsed.body };
 }
 
+export type PaginaSeccion = { titulo: string | null; body: string };
+
+/**
+ * Splits an MDX body on its `## ` headings. The text before the first
+ * heading comes back with `titulo: null`. Lets a page lay sections out
+ * with photos between them without touching the author's text.
+ */
+export function splitSecciones(body: string): PaginaSeccion[] {
+  const parts = body.split(/^## +/m);
+  return parts
+    .map((part, i) => {
+      if (i === 0) return { titulo: null, body: part.trim() };
+      const nl = part.indexOf("\n");
+      return { titulo: part.slice(0, nl).trim(), body: part.slice(nl + 1).trim() };
+    })
+    .filter((s) => s.titulo !== null || s.body.length > 0);
+}
+
 /* -------------------------------------------------------------- Retiros */
 
 export function getRetiros(): Retiro[] {
