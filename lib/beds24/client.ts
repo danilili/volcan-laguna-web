@@ -134,18 +134,7 @@ export type DiaCalendario = {
   override: CalendarItem["override"] | null;
 };
 
-/** GET /inventory/rooms/calendar for one room, expanded to one entry per night. */
-export async function fetchCalendario(slug: CasaSlug, startDate: string, endDate: string): Promise<DiaCalendario[]> {
-  const roomId = ROOMS[slug];
-  const rooms = await api<CalendarRoom[]>("/inventory/rooms/calendar", {
-    roomId,
-    startDate,
-    endDate,
-    includeNumAvail: true,
-    includeMinStay: true,
-    includeOverride: true,
-  });
-  const items = rooms.find((r) => r.roomId === roomId)?.calendar ?? rooms[0]?.calendar ?? [];
+function expandCalendar(items: CalendarItem[], startDate: string, endDate: string): DiaCalendario[] {
   const byDay = new Map<string, DiaCalendario>();
   for (const it of items) {
     for (const fecha of eachDay(it.from, it.to)) {
@@ -161,6 +150,31 @@ export async function fetchCalendario(slug: CasaSlug, startDate: string, endDate
   }
   // Nights Beds24 did not mention are unknown: treat as unavailable.
   return eachDay(startDate, endDate).map((fecha) => byDay.get(fecha) ?? { fecha, disponible: false, minStay: null, override: null });
+}
+
+/**
+ * GET /inventory/rooms/calendar for several rooms in one call (1 credit),
+ * each expanded to one entry per night of [startDate, endDate].
+ */
+export async function fetchCalendarios(slugs: readonly CasaSlug[], startDate: string, endDate: string): Promise<Record<CasaSlug, DiaCalendario[]>> {
+  const rooms = await api<CalendarRoom[]>("/inventory/rooms/calendar", {
+    propertyId: PROPERTY_ID,
+    roomId: slugs.map((s) => ROOMS[s]),
+    startDate,
+    endDate,
+    includeNumAvail: true,
+    includeMinStay: true,
+    includeOverride: true,
+  });
+  const out = {} as Record<CasaSlug, DiaCalendario[]>;
+  for (const slug of slugs) out[slug] = expandCalendar(rooms.find((r) => r.roomId === ROOMS[slug])?.calendar ?? [], startDate, endDate);
+  return out;
+}
+
+/** GET /inventory/rooms/calendar for one room, expanded to one entry per night. */
+export async function fetchCalendario(slug: CasaSlug, startDate: string, endDate: string): Promise<DiaCalendario[]> {
+  const all = await fetchCalendarios([slug], startDate, endDate);
+  return all[slug];
 }
 
 type OfferRoom = { roomId: number; propertyId: number; offers?: { offerId: number; offerName?: string; price?: number; unitsAvailable?: number }[] };
@@ -225,6 +239,16 @@ export function eachDay(from: string, to: string): string[] {
   const out: string[] = [];
   for (let d = from; d <= to; d = addDays(d, 1)) out.push(d);
   return out;
+}
+
+/** 0 = Sunday … 6 = Saturday, for a YYYY-MM-DD. */
+export function dayOfWeek(iso: string): number {
+  return new Date(`${iso}T00:00:00Z`).getUTCDay();
+}
+
+/** Nearest Friday on or after `iso` (that Friday's own date when it is one). */
+export function nextFriday(iso: string): string {
+  return addDays(iso, (5 - dayOfWeek(iso) + 7) % 7);
 }
 
 /** Today in the property's time zone (Mexico City / Nayarit, no DST). */

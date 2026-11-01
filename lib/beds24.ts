@@ -5,7 +5,7 @@
  */
 
 import { cacheLife, cacheTag } from "next/cache";
-import { fetchCalendario, fetchOfertas, fetchOfertasCasas, ROOMS, type CasaSlug, type DiaCalendario, type Oferta } from "./beds24/client";
+import { addDays, dayOfWeek, fetchCalendario, fetchCalendarios, fetchOfertas, fetchOfertasCasas, hoyISO, isBeds24Configured, nextFriday, ROOMS, type CasaSlug, type DiaCalendario, type Oferta } from "./beds24/client";
 
 export * from "./beds24/client";
 
@@ -29,4 +29,36 @@ export async function getOfertasCasas(slugs: readonly CasaSlug[], arrival: strin
   cacheLife("minutes");
   cacheTag("beds24", ...slugs.map((s) => `beds24:room:${ROOMS[s]}`));
   return fetchOfertasCasas(slugs, arrival, departure, numAdults, numChildren);
+}
+
+/** Calendars for several houses at once (one Beds24 call). */
+export async function getCalendarios(slugs: readonly CasaSlug[], startDate: string, endDate: string): Promise<Record<CasaSlug, DiaCalendario[]>> {
+  "use cache";
+  cacheLife("minutes");
+  cacheTag("beds24", ...slugs.map((s) => `beds24:room:${ROOMS[s]}`));
+  return fetchCalendarios(slugs, startDate, endDate);
+}
+
+/**
+ * Whether Beds24 has opened the coming weekend (Fri + Sat nights) for a "para
+ * 4" variant: both nights free with a minimum stay the weekend can meet. Bea
+ * keeps those weekends at a 7-night minimum and lowers it one week out when
+ * the full house is still free. On Saturday/Sunday it looks at the next
+ * weekend. Never throws: without Beds24 it is simply false.
+ */
+export async function getFinDeSemanaAbierto(slug: CasaSlug): Promise<boolean> {
+  "use cache";
+  cacheLife("minutes");
+  cacheTag("beds24", `beds24:room:${ROOMS[slug]}`);
+  if (!isBeds24Configured()) return false;
+  const hoy = hoyISO();
+  const dow = dayOfWeek(hoy);
+  const viernes = nextFriday(dow === 6 || dow === 0 ? addDays(hoy, 1) : hoy);
+  try {
+    const noches = await fetchCalendario(slug, viernes, addDays(viernes, 1));
+    return noches.length === 2 && noches.every((n) => n.disponible && (n.minStay ?? 1) <= 2);
+  } catch (e) {
+    console.error("[beds24] fin de semana", slug, e instanceof Error ? e.message : e);
+    return false;
+  }
 }
