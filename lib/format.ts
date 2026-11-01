@@ -43,3 +43,8 @@ export function formatDateRange(startIso: string, endIso?: string | null): strin
   const end = fmt(endIso, { day: "numeric", month: "short", year: "numeric" });
   return `${start}–${end}`;
 }
+
+/** "1 baño" / "2.5 baños" — pluralises on anything that is not exactly 1. */
+export function plural(n: number, singular: string, pluralForm: string): string {
+  return `${formatNumber(n)} ${n === 1 ? singular : pluralForm}`;
+}

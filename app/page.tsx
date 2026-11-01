@@ -37,6 +37,7 @@ export default function HomePage() {
             nombre: c.nombre,
             capacidad: c.capacidad,
             recamaras: c.recamaras,
+            banos: c.banos,
             precioNoche: c.precioNoche,
             imagenPrincipal: c.imagenPrincipal,
             alt: getImagen(c.imagenPrincipal, c.nombre).alt,

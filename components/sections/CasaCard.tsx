@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Icon } from "@/components/ui/Icon";
 import { cn } from "@/lib/cn";
 import type { Casa } from "@/lib/content";
 import { formatMXN } from "@/lib/format";
+import { CasaDatos } from "./CasaDatos";
 
 /**
  * House card. Shows the normal nightly rate (week 2: live price from Beds24;
@@ -59,16 +59,7 @@ export function CasaCard({ casa, alt, className, priority = false, finDeSemanaAb
         <span className="font-display text-2xl leading-tight text-laguna-900">{casa.nombre}</span>
         <span className="mt-1.5 line-clamp-2 text-sm text-ink-500">{casa.resumen}</span>
         <span className="mt-4 flex items-end justify-between gap-3">
-          <span className="flex items-center gap-3 text-sm text-ink-700">
-            <span className="inline-flex items-center gap-1">
-              <Icon name="recamara" size={18} className="text-selva-600" /> {casa.recamaras}
-            </span>
-            {casa.banos ? (
-              <span className="inline-flex items-center gap-1">
-                <Icon name="bano" size={18} className="text-selva-600" /> {casa.banos}
-              </span>
-            ) : null}
-          </span>
+          <CasaDatos capacidad={casa.capacidad} recamaras={casa.recamaras} banos={casa.banos} />
           <span className="text-right">
             <span className="block font-display text-xl text-laguna-900">
               {formatMXN(casa.precioNoche)}

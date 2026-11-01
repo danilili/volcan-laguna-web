@@ -6,12 +6,14 @@ import { useState } from "react";
 import { Icon } from "@/components/ui/Icon";
 import { cn } from "@/lib/cn";
 import { formatMXN } from "@/lib/format";
+import { CasaDatos } from "./CasaDatos";
 
 export type CasaResumen = {
   slug: string;
   nombre: string;
   capacidad: number;
   recamaras: number;
+  banos: number;
   precioNoche: number;
   imagenPrincipal: string;
   alt: string;
@@ -102,14 +104,7 @@ export function Somos({ casas, titulo, texto }: { casas: CasaResumen[]; titulo: 
               </span>
               <span className="min-w-0 flex-1">
                 <span className="block font-display text-xl leading-tight text-laguna-900">{c.nombre}</span>
-                <span className="mt-1 flex items-center gap-3 text-sm text-ink-500">
-                  <span className="inline-flex items-center gap-1">
-                    <Icon name="personas" size={16} /> {c.capacidad}
-                  </span>
-                  <span className="inline-flex items-center gap-1">
-                    <Icon name="recamara" size={16} /> {c.recamaras}
-                  </span>
-                </span>
+                <CasaDatos capacidad={c.capacidad} recamaras={c.recamaras} banos={c.banos} size={16} className="mt-1 text-ink-500" />
                 <span className="mt-1 block text-sm">
                   <span className="font-medium text-laguna-900">{formatMXN(c.precioNoche)}</span> / noche
                 </span>
