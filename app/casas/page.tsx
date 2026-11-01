@@ -19,7 +19,12 @@ export default function CasasPage() {
 
   return (
     <>
-      <PageHero eyebrow="Las casas" title="Tres casas, una laguna" lede="Cada casa tiene su propio acceso al agua. Elige por tamaño de grupo." image={hero} />
+      <PageHero
+        eyebrow="Las casas"
+        title="Tres casas, una laguna"
+        lede="Ven a disfrutar de la laguna de Santa María del Oro en una casa privada, con la tranquilidad y exclusividad de compartir el espacio únicamente con tu grupo."
+        image={hero}
+      />
       <Section compact>
         <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {principales.map((c, i) => (
