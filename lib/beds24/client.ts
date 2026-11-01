@@ -8,9 +8,18 @@
  * an invite code created in the Beds24 panel (SETTINGS > MARKETPLACE > API)
  * and exchanged once with `pnpm beds24:setup` (scripts/beds24-setup.ts).
  *
+ * Pricing model in Bea's account (checked 2026-11-01): rooms have no daily
+ * prices (price1..16 are empty). Each room has a rack rate and the calendar
+ * carries a per-night multiplier (0.75 Mon–Thu, 1 Fri–Sun, 1.3 on some
+ * "para 4" weekend nights); Beds24 applies it and /inventory/rooms/offers
+ * returns the total for the stay. That total is the only price the site
+ * shows live; the calendar is used for availability and minimum stay only.
+ * Rooms are paired as dependencies (Los Mangos ↔ para 4, Santuario ↔ para 4),
+ * so booking one closes the other.
+ *
  * Spec: https://beds24.com/api/v2/apiV2.yaml. Credits: 100 per 5 minutes
- * per account; the X-RequestCost / X-FiveMinCreditLimit-Remaining headers
- * are logged when BEDS24_DEBUG=1.
+ * per account; the X-Request-Cost / X-Five-Min-Limit-Remaining headers are
+ * logged when BEDS24_DEBUG=1.
  *
  * This file has no Next.js imports so scripts (tsx) can use it; the cached
  * wrappers live in lib/beds24.ts.
@@ -77,7 +86,7 @@ async function api<T>(path: string, query: Query = {}): Promise<T> {
   }
   const res = await fetch(url, { headers: { token: await getToken(), accept: "application/json" } });
   if (process.env.BEDS24_DEBUG === "1") {
-    console.log(`[beds24] ${path} ${res.status} cost=${res.headers.get("x-requestcost")} left=${res.headers.get("x-fiveminecreditlimit-remaining") ?? res.headers.get("x-fivemincreditlimit-remaining")}`);
+    console.log(`[beds24] ${path} ${res.status} cost=${res.headers.get("x-request-cost")} left=${res.headers.get("x-five-min-limit-remaining")}`);
   }
   const body = (await res.json().catch(() => null)) as ApiOk<T> | ApiErr | null;
   if (!res.ok || !body || body.success === false) {
@@ -110,8 +119,6 @@ type CalendarItem = {
   minStay?: number;
   maxStay?: number;
   override?: "none" | "blackout" | "exception" | "noCheckIn" | "noCheckOut" | "noCheckInOrCheckOut";
-  price1?: number;
-  [k: `price${number}`]: number | undefined;
 };
 type CalendarRoom = { roomId: number; propertyId?: number; calendar: CalendarItem[] };
 
@@ -121,8 +128,7 @@ export type DiaCalendario = {
   fecha: string;
   /** numAvail > 0 and not blacked out. */
   disponible: boolean;
-  /** Nightly rate (Beds24 price1) in MXN, or null when Beds24 has none for that night. */
-  precio: number | null;
+  /** Minimum nights for a stay starting that night (null when Beds24 did not say). */
   minStay: number | null;
   /** Check-in restriction for that date. */
   override: CalendarItem["override"] | null;
@@ -137,7 +143,6 @@ export async function fetchCalendario(slug: CasaSlug, startDate: string, endDate
     endDate,
     includeNumAvail: true,
     includeMinStay: true,
-    includePrices: true,
     includeOverride: true,
   });
   const items = rooms.find((r) => r.roomId === roomId)?.calendar ?? rooms[0]?.calendar ?? [];
@@ -149,36 +154,49 @@ export async function fetchCalendario(slug: CasaSlug, startDate: string, endDate
       byDay.set(fecha, {
         fecha,
         disponible: (it.numAvail ?? 0) > 0 && override !== "blackout",
-        precio: typeof it.price1 === "number" && it.price1 > 0 ? it.price1 : null,
         minStay: it.minStay ?? null,
         override,
       });
     }
   }
-  // Nights Beds24 did not mention are unknown: treat as unavailable, no price.
-  return eachDay(startDate, endDate).map((fecha) => byDay.get(fecha) ?? { fecha, disponible: false, precio: null, minStay: null, override: null });
+  // Nights Beds24 did not mention are unknown: treat as unavailable.
+  return eachDay(startDate, endDate).map((fecha) => byDay.get(fecha) ?? { fecha, disponible: false, minStay: null, override: null });
 }
 
-type OfferRoom = { roomId: number; propertyId: number; offers: { offerId: number; offerName?: string; price?: number; unitsAvailable?: number }[] };
+type OfferRoom = { roomId: number; propertyId: number; offers?: { offerId: number; offerName?: string; price?: number; unitsAvailable?: number }[] };
 
 /** A bookable offer for a stay. `total` is the full price for all nights, straight from Beds24. */
 export type Oferta = { offerId: number; nombre: string; total: number; unidadesDisponibles: number };
 
-/** GET /inventory/rooms/offers for one room, arrival/departure and occupancy. */
-export async function fetchOfertas(slug: CasaSlug, arrival: string, departure: string, numAdults: number, numChildren = 0): Promise<Oferta[]> {
-  const roomId = ROOMS[slug];
+function parseOffers(room: OfferRoom | undefined): Oferta[] {
+  return (room?.offers ?? [])
+    .filter((o) => typeof o.price === "number")
+    .map((o) => ({ offerId: o.offerId, nombre: o.offerName ?? "", total: o.price as number, unidadesDisponibles: o.unitsAvailable ?? 0 }));
+}
+
+/**
+ * GET /inventory/rooms/offers for several rooms in one call (1 credit) for the
+ * same arrival/departure and occupancy. A room with no bookable offer (not
+ * available, minimum stay not met, over capacity) comes back as [].
+ */
+export async function fetchOfertasCasas(slugs: readonly CasaSlug[], arrival: string, departure: string, numAdults: number, numChildren = 0): Promise<Record<CasaSlug, Oferta[]>> {
   const rooms = await api<OfferRoom[]>("/inventory/rooms/offers", {
     propertyId: PROPERTY_ID,
-    roomId,
+    roomId: slugs.map((s) => ROOMS[s]),
     arrival,
     departure,
     numAdults,
     numChildren,
   });
-  const room = rooms.find((r) => r.roomId === roomId) ?? rooms[0];
-  return (room?.offers ?? [])
-    .filter((o) => typeof o.price === "number")
-    .map((o) => ({ offerId: o.offerId, nombre: o.offerName ?? "", total: o.price as number, unidadesDisponibles: o.unitsAvailable ?? 0 }));
+  const out = {} as Record<CasaSlug, Oferta[]>;
+  for (const slug of slugs) out[slug] = parseOffers(rooms.find((r) => r.roomId === ROOMS[slug]));
+  return out;
+}
+
+/** GET /inventory/rooms/offers for one room, arrival/departure and occupancy. */
+export async function fetchOfertas(slug: CasaSlug, arrival: string, departure: string, numAdults: number, numChildren = 0): Promise<Oferta[]> {
+  const all = await fetchOfertasCasas([slug], arrival, departure, numAdults, numChildren);
+  return all[slug];
 }
 
 /* ------------------------------------------------------------------ dates */

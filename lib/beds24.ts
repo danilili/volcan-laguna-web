@@ -5,7 +5,7 @@
  */
 
 import { cacheLife, cacheTag } from "next/cache";
-import { fetchCalendario, fetchOfertas, ROOMS, type CasaSlug, type DiaCalendario, type Oferta } from "./beds24/client";
+import { fetchCalendario, fetchOfertas, fetchOfertasCasas, ROOMS, type CasaSlug, type DiaCalendario, type Oferta } from "./beds24/client";
 
 export * from "./beds24/client";
 
@@ -21,4 +21,12 @@ export async function getOfertas(slug: CasaSlug, arrival: string, departure: str
   cacheLife("minutes");
   cacheTag("beds24", `beds24:room:${ROOMS[slug]}`);
   return fetchOfertas(slug, arrival, departure, numAdults, numChildren);
+}
+
+/** Offers for several houses at once (one Beds24 call), e.g. the date search. */
+export async function getOfertasCasas(slugs: readonly CasaSlug[], arrival: string, departure: string, numAdults: number, numChildren = 0): Promise<Record<CasaSlug, Oferta[]>> {
+  "use cache";
+  cacheLife("minutes");
+  cacheTag("beds24", ...slugs.map((s) => `beds24:room:${ROOMS[s]}`));
+  return fetchOfertasCasas(slugs, arrival, departure, numAdults, numChildren);
 }

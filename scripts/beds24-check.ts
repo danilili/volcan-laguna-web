@@ -1,13 +1,13 @@
 /**
  * Smoke test for the Beds24 token in .env.local:
  *   pnpm beds24:check
- * Prints what the token can do, then a week of Casa Santuario's calendar and
- * a weekend quote. Read-only; nothing is written to Beds24.
+ * Prints what the token can do, a week of Casa Santuario's calendar, a weekend
+ * quote and the same weekend for all houses. Read-only; nothing is written to Beds24.
  */
 
 import fs from "node:fs";
 import path from "node:path";
-import { addDays, fetchAuthDetails, fetchCalendario, fetchOfertas, hoyISO, isBeds24Configured } from "../lib/beds24/client";
+import { addDays, fetchAuthDetails, fetchCalendario, fetchOfertas, fetchOfertasCasas, hoyISO, isBeds24Configured, ROOMS, type CasaSlug } from "../lib/beds24/client";
 
 // Minimal .env.local loader (no dotenv dependency).
 const envFile = path.join(process.cwd(), ".env.local");
@@ -29,13 +29,17 @@ async function main() {
 
   const hoy = hoyISO();
   const cal = await fetchCalendario("santuario", hoy, addDays(hoy, 6));
-  console.table(cal.map((d) => ({ noche: d.fecha, disponible: d.disponible, precio: d.precio, minStay: d.minStay, override: d.override })));
+  console.table(cal.map((d) => ({ noche: d.fecha, disponible: d.disponible, minStay: d.minStay, override: d.override })));
 
   // Next Friday → Sunday.
   const dow = new Date(`${hoy}T00:00:00Z`).getUTCDay();
   const viernes = addDays(hoy, ((5 - dow + 7) % 7) || 7);
   const ofertas = await fetchOfertas("santuario", viernes, addDays(viernes, 2), 2);
   console.log(`ofertas santuario ${viernes} → ${addDays(viernes, 2)} (2 adultos):`, ofertas);
+
+  // All houses for the same weekend in a single call.
+  const todas = await fetchOfertasCasas(Object.keys(ROOMS) as CasaSlug[], viernes, addDays(viernes, 2), 2);
+  console.table(Object.entries(todas).map(([casa, o]) => ({ casa, disponible: o.length > 0, total: o[0]?.total ?? null })));
 }
 
 main().catch((e) => {
