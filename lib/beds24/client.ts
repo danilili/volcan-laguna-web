@@ -2,10 +2,11 @@
  * Beds24 API v2 client (read-only). Beds24 is the only source of prices,
  * availability and minimum stays; the site never computes a price.
  *
- * Auth: BEDS24_TOKEN is a long-life token (read-only, generated in the
- * Beds24 control panel under SETTINGS > MARKETPLACE > API) and is sent as
- * the `token` header directly. If instead BEDS24_REFRESH_TOKEN is set, a
- * 24 h access token is fetched from /authentication/token and memoised.
+ * Auth: BEDS24_TOKEN is a long-life token (read-only) sent as the `token`
+ * header directly. If instead BEDS24_REFRESH_TOKEN is set, a 24 h access
+ * token is fetched from /authentication/token and memoised. Both come from
+ * an invite code created in the Beds24 panel (SETTINGS > MARKETPLACE > API)
+ * and exchanged once with `pnpm beds24:setup` (scripts/beds24-setup.ts).
  *
  * Spec: https://beds24.com/api/v2/apiV2.yaml. Credits: 100 per 5 minutes
  * per account; the X-RequestCost / X-FiveMinCreditLimit-Remaining headers

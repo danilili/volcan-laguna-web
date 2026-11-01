@@ -9,7 +9,8 @@
     "lint": "eslint",
     "export:wp": "tsx scripts/export-wordpress.ts",
     "render:map": "tsx scripts/render-map.ts",
-    "beds24:check": "tsx scripts/beds24-check.ts"
+    "beds24:check": "tsx scripts/beds24-check.ts",
+    "beds24:setup": "tsx scripts/beds24-setup.ts"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
