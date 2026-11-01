@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "export:wp": "tsx scripts/export-wordpress.ts",
-    "render:map": "tsx scripts/render-map.ts"
+    "render:map": "tsx scripts/render-map.ts",
+    "beds24:check": "tsx scripts/beds24-check.ts"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
