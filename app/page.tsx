@@ -2,7 +2,14 @@ import { Section } from "@/components/ui/Section";
 import { Alimentos, Casas, Hero, Laguna, Mapa, Resenas, Retiros, Somos } from "@/components/sections";
 import { getCasas, getCasasPrincipales, getHome, getImagen, getResenas, getRetirosProximos } from "@/lib/content";
 
-/* Aerial photos for the hero until Bea's video exists. */
+/* Hero loop cut from Bea's "This is Volcán Laguna 2025" reel (see scripts/hero-video.sh). */
+const HERO_VIDEO = {
+  desktop: [{ src: "/video/hero-1080.mp4", type: "video/mp4" as const }],
+  mobile: [{ src: "/video/hero-720.mp4", type: "video/mp4" as const }],
+  poster: "/video/hero-poster.jpg",
+};
+
+/* Aerial photos: poster/fallback for the hero video (and the whole hero under reduced motion). */
 const HERO_SLIDES = [
   "/images/general/general-04-vista-aerea-volcan-laguna.jpg",
   "/images/santuario/santuario-01-vista-aerea-jacuzzi-lago.jpg",
@@ -19,7 +26,7 @@ export default function HomePage() {
 
   return (
     <>
-      <Hero frase={home.fraseHero} subtitulo={home.subtituloHero} slides={slides} />
+      <Hero frase={home.fraseHero} subtitulo={home.subtituloHero} slides={slides} video={HERO_VIDEO} />
 
       <Section id="somos" compact>
         <Somos

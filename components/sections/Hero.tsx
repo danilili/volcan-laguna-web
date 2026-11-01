@@ -3,18 +3,21 @@ import { Icon } from "@/components/ui/Icon";
 import { Reveal } from "@/components/ui/Reveal";
 import { site } from "@/lib/site";
 import { HeroSlideshow, type Slide } from "./HeroSlideshow";
+import { HeroVideo, type HeroVideoConfig } from "./HeroVideo";
 import { DateBar } from "./DateBar";
 
 type Props = {
   frase: string;
   subtitulo?: string;
   slides: Slide[];
+  /** Optional muted loop; the slideshow stays as poster and fallback. */
+  video?: HeroVideoConfig | null;
 };
 
-export function Hero({ frase, subtitulo, slides }: Props) {
+export function Hero({ frase, subtitulo, slides, video }: Props) {
   return (
     <section className="relative flex min-h-[100svh] flex-col justify-end text-crema-50" aria-labelledby="hero-titulo">
-      <HeroSlideshow slides={slides} />
+      {video ? <HeroVideo video={video} slides={slides} /> : <HeroSlideshow slides={slides} />}
 
       <div className="relative mx-auto w-full max-w-7xl px-4 pt-28 pb-5 sm:px-6 sm:pb-12 lg:px-8">
         <Reveal>
