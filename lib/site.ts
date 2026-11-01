@@ -33,6 +33,8 @@ export const site = {
     "No se fuma dentro",
     "Estancia mínima 2 noches (3 en Semana Santa y del 18 dic al 3 ene)",
   ],
+  /** Bea's words on the no-Wi-Fi choice; shown next to "Sin internet" everywhere. */
+  wifiNote: "Elegimos no ofrecer Wi-Fi: desconectarnos de las pantallas para reconectar entre nosotros.",
   beds24: {
     propertyId: 353281,
     rooms: {

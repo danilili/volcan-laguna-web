@@ -82,7 +82,9 @@ export function Footer() {
             </li>
             <li className="flex items-start gap-2">
               <Icon name="sinInternet" size={18} className="mt-0.5 text-arena-500" />
-              <span>Sin internet: aquí se viene a desconectar</span>
+              <span>
+                Sin internet. <span className="text-laguna-300">{site.wifiNote}</span>
+              </span>
             </li>
             <li className="flex items-start gap-2">
               <Icon name="check" size={18} className="mt-0.5 text-arena-500" />

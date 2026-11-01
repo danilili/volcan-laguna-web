@@ -168,6 +168,7 @@ export default async function CasaPage({ params }: PageProps<"/casas/[slug]">) {
                   <li key={p}>· {p}</li>
                 ))}
               </ul>
+              <p className="mt-3 text-xs text-ink-500 italic">{site.wifiNote}</p>
             </div>
           </aside>
         </div>
