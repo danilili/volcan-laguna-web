@@ -88,6 +88,24 @@ export default async function CasaPage({ params }: PageProps<"/casas/[slug]">) {
               </p>
             ) : null}
 
+            {padre ? (
+              <div className="mt-6 rounded-card bg-laguna-100 p-5">
+                <h2 className="font-display text-xl text-laguna-900">Cómo funciona el fin de semana</h2>
+                <p className="mt-2 text-sm text-ink-700">
+                  Los viernes y sábados se abren una semana antes, si la casa completa sigue libre, a la misma tarifa de fin de
+                  semana. Si quieres un fin de semana, escríbenos por WhatsApp y te avisamos en cuanto se abra.
+                </p>
+                <Button
+                  href={whatsappUrl(`Hola, me interesa ${casa.nombre} para un fin de semana. ¿Me avisan cuando se abra?`)}
+                  variant="whatsapp"
+                  size="sm"
+                  className="mt-4"
+                >
+                  <Icon name="whatsapp" size={18} /> Avísenme por WhatsApp
+                </Button>
+              </div>
+            ) : null}
+
             {/* What the stay includes and what is booked separately */}
             <CasaServicios casa={casa} />
 
