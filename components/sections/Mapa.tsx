@@ -4,11 +4,11 @@ import { Icon } from "@/components/ui/Icon";
 import { Reveal } from "@/components/ui/Reveal";
 import { mapsDirectionsUrl, site, whatsappUrl } from "@/lib/site";
 
-/* TODO: confirm travel times with Bea. */
+/* Travel times by car, confirmed by Bea. */
 const comoLlegar = [
-  { desde: "Tepic", tiempo: "≈ 45 min", nota: "por la carretera a Santa María del Oro" },
-  { desde: "Guadalajara", tiempo: "≈ 2 h 30 min", nota: "por la autopista a Tepic" },
-  { desde: "Puerto Vallarta", tiempo: "≈ 3 h 30 min", nota: "vía Compostela y Tepic" },
+  { desde: "Tepic", tiempo: "≈ 1 h", nota: "por la carretera a Santa María del Oro" },
+  { desde: "Puerto Vallarta", tiempo: "≈ 2 h", nota: "vía Compostela" },
+  { desde: "Guadalajara", tiempo: "≈ 3 h 30 min", nota: "por la autopista a Tepic" },
 ];
 
 export function Mapa({ titulo, texto }: { titulo: string; texto?: string }) {
