@@ -55,8 +55,7 @@ export default async function CasaPage({ params }: PageProps<"/casas/[slug]">) {
             Reservar
           </Button>
           <p className="text-crema-50/90">
-            desde <span className="font-display text-2xl text-crema-50">{formatMXN(casa.precioDesde)}</span> / noche
-            <span className="block text-xs text-crema-50/70">lun–jue · fin de semana desde {formatMXN(casa.precioFinDeSemana)}</span>
+            <span className="font-display text-2xl text-crema-50">{formatMXN(casa.precioNoche)}</span> / noche
           </p>
         </div>
       </PageHero>
@@ -120,12 +119,8 @@ export default async function CasaPage({ params }: PageProps<"/casas/[slug]">) {
           <aside className="lg:col-span-1">
             <div className="rounded-card bg-crema-50 p-5 shadow-card lg:sticky lg:top-28">
               <p className="text-[11px] uppercase tracking-[0.14em] text-ink-500">Precio por noche</p>
-              <p className="mt-1 font-display text-3xl text-laguna-900">
-                desde {formatMXN(casa.precioDesde)}
-              </p>
-              <p className="mt-1 text-sm text-ink-500">
-                Precio de referencia. El precio real y la disponibilidad se confirman al reservar.
-              </p>
+              <p className="mt-1 font-display text-3xl text-laguna-900">{formatMXN(casa.precioNoche)}</p>
+              <p className="mt-1 text-sm text-ink-500">La disponibilidad y el total se confirman al reservar.</p>
               <div className="mt-5 flex flex-col gap-2">
                 <Button href={`/reservar?casa=${casa.slug}`} fullWidth>
                   Ver fechas y reservar
@@ -142,7 +137,7 @@ export default async function CasaPage({ params }: PageProps<"/casas/[slug]">) {
                       <Link href={`/casas/${v.slug}`} className="font-medium text-laguna-700 underline underline-offset-2">
                         {v.nombre}
                       </Link>{" "}
-                      desde {formatMXN(v.precioDesde)}.
+                      a {formatMXN(v.precioNoche)} / noche.
                     </p>
                   ))}
                   {padre ? (

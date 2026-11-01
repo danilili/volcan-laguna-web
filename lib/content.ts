@@ -21,9 +21,12 @@ export type Casa = {
   beds24RoomId: number;
   capacidad: number;
   recamaras: number;
+  /** Bathrooms; decimals allowed ("2.5"). */
   banos: number;
-  precioDesde: number;
-  precioFinDeSemana: number;
+  /** Nightly rate shown on the site (Fri–Sun reference). The real price always comes from Beds24. */
+  precioNoche: number;
+  /** Mon–Thu reference rate. Internal: never displayed. */
+  precioLunJue: number;
   resumen: string;
   imagenPrincipal: string;
   amenidades: string[];

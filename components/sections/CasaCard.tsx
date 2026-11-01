@@ -6,8 +6,8 @@ import type { Casa } from "@/lib/content";
 import { formatMXN } from "@/lib/format";
 
 /**
- * House card. Price is the reference "desde" price for now (TODO week 2:
- * live nightly price from Beds24; the site never computes prices).
+ * House card. Shows the normal nightly rate (week 2: live price from Beds24;
+ * the site never computes prices).
  */
 export function CasaCard({ casa, alt, className, priority = false }: { casa: Casa; alt: string; className?: string; priority?: boolean }) {
   return (
@@ -46,9 +46,8 @@ export function CasaCard({ casa, alt, className, priority = false }: { casa: Cas
             ) : null}
           </span>
           <span className="text-right">
-            <span className="block text-[11px] uppercase tracking-[0.14em] text-ink-500">desde</span>
             <span className="block font-display text-xl text-laguna-900">
-              {formatMXN(casa.precioDesde)}
+              {formatMXN(casa.precioNoche)}
               <span className="font-sans text-xs text-ink-500"> / noche</span>
             </span>
           </span>

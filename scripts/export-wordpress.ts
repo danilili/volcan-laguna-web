@@ -55,8 +55,8 @@ interface HouseConfig {
   beds24RoomId: number;
   capacidad: number;
   recamaras: number;
-  precioDesde: number;
-  precioFinDeSemana: number;
+  precioLunJue: number;
+  precioNoche: number;
   /** Folder under public/images that holds this house's photos. */
   imageDir: string;
   /** Set for the "para 4" variants that share the parent house's photos. */
@@ -73,8 +73,8 @@ const HOUSES: HouseConfig[] = [
     beds24RoomId: 728650,
     capacidad: 10,
     recamaras: 5,
-    precioDesde: 11250,
-    precioFinDeSemana: 15000,
+    precioLunJue: 11250,
+    precioNoche: 15000,
     imageDir: "santuario",
   },
   {
@@ -84,8 +84,8 @@ const HOUSES: HouseConfig[] = [
     beds24RoomId: 728645,
     capacidad: 12,
     recamaras: 3,
-    precioDesde: 5625,
-    precioFinDeSemana: 7500,
+    precioLunJue: 5625,
+    precioNoche: 7500,
     imageDir: "los-mangos",
   },
   {
@@ -95,8 +95,8 @@ const HOUSES: HouseConfig[] = [
     beds24RoomId: 728649,
     capacidad: 6,
     recamaras: 2,
-    precioDesde: 2850,
-    precioFinDeSemana: 3800,
+    precioLunJue: 2850,
+    precioNoche: 3800,
     imageDir: "moringa",
   },
   {
@@ -106,8 +106,8 @@ const HOUSES: HouseConfig[] = [
     beds24RoomId: 728651,
     capacidad: 4,
     recamaras: 2,
-    precioDesde: 4500,
-    precioFinDeSemana: 6000,
+    precioLunJue: 4500,
+    precioNoche: 6000,
     imageDir: "santuario",
     parentSlug: "santuario",
     // Exterior + shared spaces + main bedroom/bath + one second bedroom.
@@ -121,8 +121,8 @@ const HOUSES: HouseConfig[] = [
     beds24RoomId: 728648,
     capacidad: 4,
     recamaras: 2,
-    precioDesde: 2550,
-    precioFinDeSemana: 3400,
+    precioLunJue: 2550,
+    precioNoche: 3400,
     imageDir: "los-mangos",
     parentSlug: "los-mangos",
     // Skips the bunk-bed room and the second-floor shots that stay closed.
@@ -1352,7 +1352,7 @@ async function exportHouses(
     const bedrooms = parseBedrooms(html) ?? (filledFromBrief.push("recamaras"), house.recamaras);
     if (bedrooms !== house.recamaras) warn(`${house.slug}: staging bedrooms ${bedrooms} differs from brief ${house.recamaras}; using staging.`);
     const bathrooms = parseBathrooms(html);
-    filledFromBrief.push("precioDesde", "precioFinDeSemana", "beds24RoomId");
+    filledFromBrief.push("precioLunJue", "precioNoche", "beds24RoomId");
 
     const body = await contentToMarkdown(room, { images: false });
     const excerpt = htmlToText(room.excerpt?.rendered ?? "");
@@ -1378,8 +1378,8 @@ async function exportHouses(
       capacidad: capacity,
       recamaras: bedrooms,
       banos: bathrooms ?? 0,
-      precioDesde: house.precioDesde,
-      precioFinDeSemana: house.precioFinDeSemana,
+      precioLunJue: house.precioLunJue,
+      precioNoche: house.precioNoche,
       resumen: summary,
       imagenPrincipal: mainImage,
       amenidades: deriveAmenities(room, plain),

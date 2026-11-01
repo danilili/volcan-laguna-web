@@ -12,7 +12,7 @@ export type CasaResumen = {
   nombre: string;
   capacidad: number;
   recamaras: number;
-  precioDesde: number;
+  precioNoche: number;
   imagenPrincipal: string;
   alt: string;
 };
@@ -111,7 +111,7 @@ export function Somos({ casas, titulo, texto }: { casas: CasaResumen[]; titulo: 
                   </span>
                 </span>
                 <span className="mt-1 block text-sm">
-                  desde <span className="font-medium text-laguna-900">{formatMXN(c.precioDesde)}</span> / noche
+                  <span className="font-medium text-laguna-900">{formatMXN(c.precioNoche)}</span> / noche
                 </span>
               </span>
               <Icon name="flecha" size={20} className="mr-1 text-arena-600" />
