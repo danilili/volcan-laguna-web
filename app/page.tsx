@@ -45,7 +45,7 @@ export default function HomePage() {
       </Section>
 
       <Section id="casas" tone="blanco" compact>
-        <Casas casas={principales} titulo={s.casas?.titulo ?? "Tres casas, una laguna"} texto={s.casas?.texto} />
+        <Casas casas={principales} variantes={casas.filter((c) => c.padre)} titulo={s.casas?.titulo ?? "Tres casas, una laguna"} texto={s.casas?.texto} />
       </Section>
 
       <Section id="la-laguna" compact>

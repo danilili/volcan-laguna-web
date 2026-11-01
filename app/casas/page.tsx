@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CasaCard } from "@/components/sections/CasaCard";
+import { PARA_4 } from "@/components/sections/Casas";
 import { PageHero } from "@/components/ui/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section, SectionHeading } from "@/components/ui/Section";
@@ -29,8 +30,8 @@ export default function CasasPage() {
         </ul>
         {variantes.length ? (
           <>
-            <SectionHeading className="mt-14" eyebrow="Para grupos pequeños" title="Las mismas casas, para 4" lede="Una parte de la casa, con dos recámaras, a un precio menor." />
-            <ul className="mt-6 grid gap-5 sm:grid-cols-2">
+            <SectionHeading className="mt-14" eyebrow="Entre semana" title={PARA_4.titulo} lede={PARA_4.texto} />
+            <ul className="mt-6 grid gap-5 sm:grid-cols-2 lg:max-w-4xl">
               {variantes.map((c, i) => (
                 <Reveal as="li" key={c.slug} delay={i * 0.06}>
                   <CasaCard casa={c} alt={getImagen(c.imagenPrincipal, c.nombre).alt} className="h-full" />
