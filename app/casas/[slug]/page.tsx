@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Mdx } from "@/components/content/Mdx";
+import { CasaVideo } from "@/components/sections/CasaVideo";
 import { amenityIcon, amenityLabel } from "@/components/icons";
 import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
@@ -83,6 +84,9 @@ export default async function CasaPage({ params }: PageProps<"/casas/[slug]">) {
                 ))}
               </ul>
             ) : null}
+
+            {/* Walkthrough video (only houses with `video` in their frontmatter) */}
+            {casa.video ? <CasaVideo video={casa.video} titulo={casa.nombre} /> : null}
 
             {/* Long description, collapsed */}
             {casa.body ? (

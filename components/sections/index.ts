@@ -3,6 +3,7 @@ export { Somos } from "./Somos";
 export type { CasaResumen } from "./Somos";
 export { Casas } from "./Casas";
 export { CasaCard } from "./CasaCard";
+export { CasaVideo } from "./CasaVideo";
 export { Laguna } from "./Laguna";
 export { Retiros } from "./Retiros";
 export { Alimentos } from "./Alimentos";

@@ -11,6 +11,8 @@ import matter from "gray-matter";
 const CONTENT_DIR = path.join(process.cwd(), "content");
 
 export type Imagen = { src: string; alt: string };
+/** Walkthrough video hosted in Vercel Blob (never in the repo). */
+export type Video = { src: string; poster: string };
 
 export type Casa = {
   slug: string;
@@ -26,6 +28,8 @@ export type Casa = {
   imagenPrincipal: string;
   amenidades: string[];
   galeria: Imagen[];
+  /** Optional walkthrough player; only Santuario has one for now. */
+  video?: Video;
   /** Parent house for the "para 4" variants (derived). */
   padre?: string;
   body: string;
