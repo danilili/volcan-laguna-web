@@ -11,7 +11,6 @@ import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
 import { PageHero } from "@/components/ui/PageHero";
 import { Section } from "@/components/ui/Section";
-import { Todo } from "@/components/ui/Todo";
 import { getCalendario } from "@/lib/beds24";
 import { daysBetween, hoyISO, isBeds24Configured, type CasaSlug } from "@/lib/beds24/client";
 import { buscarCasas, parseBusqueda, type BusquedaParse, type Resultado } from "@/lib/busqueda";
@@ -186,10 +185,6 @@ async function Resultados({ searchParams }: { searchParams: SearchParams }) {
           </ul>
         </>
       ) : null}
-
-      <div className="mt-8">
-        <Todo>Checkout en línea: la reserva se confirmará aquí mismo vía n8n (VL · crear-reserva). Mientras, se cierra por WhatsApp.</Todo>
-      </div>
     </>
   );
 }

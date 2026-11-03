@@ -7,6 +7,7 @@ import type { Busqueda, EstadoResultado, Resultado } from "@/lib/busqueda";
 import { cn } from "@/lib/cn";
 import { getImagen } from "@/lib/content";
 import { formatDateLong, formatMXN, plural } from "@/lib/format";
+import { buildConfirmarUrl } from "@/lib/reserva";
 import { whatsappUrl } from "@/lib/site";
 
 /** Why a house cannot be booked, in the visitor's words. */
@@ -83,15 +84,18 @@ export function ResultadoCasa({ r, busqueda, destacada = false }: { r: Resultado
         <div className="mt-auto flex flex-wrap gap-2 pt-4">
           {disponible ? (
             <>
+              <Button href={buildConfirmarUrl({ casa: r.slug, arrival: busqueda.arrival, departure: busqueda.departure, personas: busqueda.personas })} size="sm">
+                Reservar <Icon name="flecha" size={18} />
+              </Button>
               <Button
                 href={whatsappUrl(`Hola, quiero reservar ${r.casa.nombre} ${fechas} para ${personas}. Total ${formatMXN(r.total!)}.`)}
                 variant="whatsapp"
                 size="sm"
               >
-                <Icon name="whatsapp" size={18} /> Reservar por WhatsApp
+                <Icon name="whatsapp" size={18} /> Por WhatsApp
               </Button>
-              <Button href={buildReservaUrl(r, busqueda)} variant="secondary" size="sm">
-                <Icon name="calendario" size={18} /> Ver calendario
+              <Button href={buildReservaUrl(r, busqueda)} variant="ghost" size="sm">
+                <Icon name="calendario" size={18} /> Calendario
               </Button>
             </>
           ) : r.estado === "fin-de-semana" ? (
