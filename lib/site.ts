@@ -61,6 +61,5 @@ export const mapsDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destina
 export const nav = [
   { href: "/casas", label: "Casas" },
   { href: "/retiros", label: "Retiros" },
-  { href: "/alimentos", label: "Alimentos" },
   { href: "/la-laguna", label: "La laguna" },
 ] as const;

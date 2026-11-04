@@ -1,5 +1,5 @@
 import { Section } from "@/components/ui/Section";
-import { Alimentos, Casas, Hero, Laguna, Mapa, Resenas, Retiros, Somos } from "@/components/sections";
+import { Casas, Hero, Laguna, Mapa, Resenas, Retiros, Somos } from "@/components/sections";
 import { getCasas, getCasasPrincipales, getHome, getImagen, getResenas, getRetirosProximos } from "@/lib/content";
 
 /* Hero loop cut from Bea's "This is Volcán Laguna 2025" reel (see scripts/hero-video.sh). */
@@ -55,10 +55,6 @@ export default function HomePage() {
 
       <Section id="retiros" tone="laguna" compact>
         <Retiros titulo={s.retiros?.titulo ?? "Retiros"} texto={s.retiros?.texto} proximo={proximo} />
-      </Section>
-
-      <Section id="alimentos" tone="blanco" compact>
-        <Alimentos titulo={s.alimentos?.titulo ?? "Alimentos"} texto={s.alimentos?.texto} />
       </Section>
 
       <Section id="resenas" compact>

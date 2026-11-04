@@ -20,7 +20,6 @@ const CON_COSTO: Item[] = [
   { icon: "temazcal", label: "Temazcal" },
   { icon: "lancha", label: "Paseo en lancha" },
   { icon: "cascada", label: "Tour a las cascadas en el ecoparque Arcadia" },
-  { icon: "alimentos", label: "Alimentos y asistencia en cocina" },
 ];
 
 /** First line of "Incluido": what part of the property the stay covers. */

@@ -5,6 +5,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
 import { getImagenesDeCarpeta } from "@/lib/content";
 
+// Hidden for launch at Bea's request (the "_" keeps this folder out of the routes). Rename to app/alimentos to publish it.
 export const metadata: Metadata = {
   title: "Alimentos",
   description: "Cocina casera, de temporada y con vista al lago, para tu estancia o tu retiro.",

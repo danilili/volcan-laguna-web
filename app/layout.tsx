@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: `%s · ${site.name}`,
   },
   description:
-    "Tres casas a la orilla de la Laguna de Santa María del Oro, Nayarit. Hospedaje para familias y grupos, retiros y alimentos con vista al lago.",
+    "Tres casas a la orilla de la Laguna de Santa María del Oro, Nayarit. Hospedaje para familias y grupos, y retiros con vista al lago.",
   openGraph: {
     type: "website",
     locale: "es_MX",
