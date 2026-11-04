@@ -6,6 +6,8 @@
 # Seven wide, calm shots (shot boundaries found with ffmpeg's scene filter),
 # slowed to 80 % with motion interpolation, 0.3 s crossfades, no audio.
 # H.264 only: VP9 came out larger than x264 on this footage, so no WebM.
+# The reel is letterboxed (black bars, 5 % top and bottom): cropped here so
+# they never show behind the transparent header.
 set -euo pipefail
 
 SRC="${1:?path to the source reel}"
@@ -26,7 +28,7 @@ SEGMENTS=(
   "21.313:22.272"   # the crater from the air
 )
 
-# Build the filter graph: trim → slow down → 1080p → interpolate, then xfade chain.
+# Build the filter graph: trim → slow down → crop bars → 1920×972 → interpolate, then xfade chain.
 FILTER=$(python3 -I - "$SPEED" "$FADE" "${SEGMENTS[@]}" <<'PY'
 import sys
 speed = float(sys.argv[1]); fade = float(sys.argv[2]); segs = sys.argv[3:]
@@ -36,7 +38,7 @@ for i, s in enumerate(segs):
     durs.append((b - a) / speed)
     parts.append(
         f"[0:v]trim=start={a}:end={b},setpts=(PTS-STARTPTS)/{speed},"
-        f"hqdn3d=2:1.5:4:4,scale=1920:1080:flags=lanczos,"
+        f"crop=iw:ih*0.9,hqdn3d=2:1.5:4:4,scale=1920:972:flags=lanczos,"
         f"minterpolate=fps=24:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1[s{i}]"
     )
 prev = "s0"; offset = 0.0
@@ -55,7 +57,7 @@ ffmpeg -v error -stats -i "$SRC" -filter_complex "$FILTER" -map "[v]" -an \
   -c:v libx264 -preset medium -crf 14 -pix_fmt yuv420p -r 24 -y "$TMP/master.mp4"
 
 encode() { # name width maxrate_kbps
-  local name=$1 w=$2 h=$(( $2 * 9 / 16 )) rate=$3
+  local name=$1 w=$2 h=$(( $2 * 81 / 160 )) rate=$3
   echo "→ $name ${w}x${h} mp4 (≤ ${rate}k)"
   ffmpeg -v error -i "$TMP/master.mp4" -vf "scale=${w}:${h}" -an \
     -c:v libx264 -preset slow -crf 27 -maxrate "${rate}k" -bufsize "$(( rate * 2 ))k" \
