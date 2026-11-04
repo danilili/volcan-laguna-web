@@ -21,7 +21,7 @@ const experiencias: Experiencia[] = [
   { icon: "laguna", titulo: "Nadar en la laguna", texto: "Agua tibia casi todo el año, desde el muelle.", src: "/images/los-mangos/mangos-08-acceso-al-agua.jpg", costo: "incluido" },
   { icon: "kayak", titulo: "Kayak y paddleboard", texto: "Rema desde el muelle, a tu ritmo.", src: "/images/los-mangos/mangos-04-muelle-lago.jpg", costo: "incluido" },
   { icon: "lancha", titulo: "Paseo en lancha", texto: "La vuelta al cráter, desde el muelle propio.", src: "/images/los-mangos/mangos-06-paseo-en-lancha.jpg", costo: "extra" },
-  { icon: "temazcal", titulo: "Temazcal y masajes", texto: "Con previa reserva, en la casa.", costo: "extra" },
+  { icon: "temazcal", titulo: "Temazcal y masajes", texto: "Con previa reserva, en la casa.", src: "/images/general/temazcal-01-fogata-y-temazcal.jpg", costo: "extra" },
 ];
 
 const etiqueta = {
