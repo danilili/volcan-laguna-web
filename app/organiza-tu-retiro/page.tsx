@@ -8,7 +8,7 @@ import { whatsappUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Organiza tu retiro",
-  description: "Las tres casas y la laguna para tu grupo: hasta 28 personas. Cotiza tu retiro.",
+  description: "Las tres casas, la laguna y la cocina para tu grupo: hasta 28 personas. Cotiza tu retiro.",
 };
 
 export default function OrganizaTuRetiroPage() {

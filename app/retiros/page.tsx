@@ -47,7 +47,7 @@ export default function RetirosPage() {
       <PageHero
         eyebrow="Retiros"
         title="Un lugar para volver a ti"
-        lede="Ofrecemos hospedaje y toda la logística para que maestros y facilitadores creen experiencias transformadoras en un santuario de conexión con la naturaleza."
+        lede="Ofrecemos hospedaje, gastronomía y toda la logística para que maestros y facilitadores creen experiencias transformadoras en un santuario de conexión con la naturaleza."
         image={hero}
         size="tall"
       >
