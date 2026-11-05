@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { fetchOfertas, isBeds24Configured } from "@/lib/beds24/client";
 import { parseBusqueda } from "@/lib/busqueda";
 import { getCasa } from "@/lib/content";
+import { revisarTokenFormulario } from "@/lib/form-token";
 import { formatMXN } from "@/lib/format";
 import { crearReservaWeb, isN8nConfigured, type ReservaError } from "@/lib/n8n";
 import { buildConfirmadaUrl, parseHuesped, type ErroresHuesped, type Huesped } from "@/lib/reserva";
@@ -26,6 +27,7 @@ const MENSAJES: Record<ReservaError, string> = {
   conflicto: `Esas fechas se acaban de ocupar. Prueba otras fechas o ${APARTAMOS}`,
   ocupado: `Esas fechas se acaban de ocupar en el calendario. Prueba otras fechas o ${APARTAMOS}`,
   sin_confirmar: `No pudimos registrar la reserva. Mejor ${APARTAMOS}`,
+  limite: `Ya tenemos varias solicitudes pendientes y no pudimos registrar esta. Mejor ${APARTAMOS}`,
   error: `No pudimos registrar la reserva. Mejor ${APARTAMOS}`,
   reserva_fallida: `No pudimos registrar la reserva. Mejor ${APARTAMOS}`,
   n8n_unavailable: `Nuestro sistema de reservas no responde en este momento. Mejor ${APARTAMOS}`,
@@ -37,6 +39,17 @@ function texto(v: FormDataEntryValue | null): string | null {
 }
 
 export async function reservar(_prev: EstadoReserva, fd: FormData): Promise<EstadoReserva> {
+  // Each request can block real dates: stop scripts before Beds24 and n8n hear about it.
+  const trampa = texto(fd.get("sitio_web"));
+  const token = revisarTokenFormulario(fd.get("token"));
+  if (trampa || token === "invalido") {
+    console.warn("[reservar] rechazada", trampa ? "trampa" : "token");
+    return { errores: { general: `No pudimos enviar tu solicitud. Recarga la página o ${APARTAMOS}` } };
+  }
+  const { huesped: enviado } = parseHuesped(fd);
+  if (token === "rapido") return { errores: { general: "Revisa tus datos y vuelve a enviar la solicitud." }, valores: enviado };
+  if (token === "viejo") return { errores: { general: "Esta página lleva mucho tiempo abierta. Recárgala para ver el precio actualizado." }, valores: enviado };
+
   const parsed = parseBusqueda({ arrival: texto(fd.get("arrival")), departure: texto(fd.get("departure")), personas: texto(fd.get("personas")), casa: texto(fd.get("casa")) });
   const b = parsed.busqueda;
   const casa = parsed.casa;

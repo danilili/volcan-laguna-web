@@ -26,11 +26,13 @@ type Props = {
   total: number;
   /** Prefilled WhatsApp text for the fallback link. */
   mensajeWhatsApp: string;
+  /** Signed timestamp from the server (lib/form-token). */
+  token: string;
 };
 
 const inicial: EstadoReserva = { errores: {} };
 
-export function FormularioReserva({ casa, arrival, departure, personas, total, mensajeWhatsApp }: Props) {
+export function FormularioReserva({ casa, arrival, departure, personas, total, mensajeWhatsApp, token }: Props) {
   const [estado, action, pending] = useActionState(reservar, inicial);
   const v = estado.valores ?? {};
   const e = estado.errores;
@@ -43,6 +45,14 @@ export function FormularioReserva({ casa, arrival, departure, personas, total, m
       <input type="hidden" name="departure" value={departure} />
       <input type="hidden" name="personas" value={personas} />
       <input type="hidden" name="total" value={Math.round(total)} />
+      <input type="hidden" name="token" value={token} />
+      {/* Trap for bots: people never see this field, so it must arrive empty. */}
+      <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
+        <label>
+          Sitio web
+          <input type="text" name="sitio_web" tabIndex={-1} autoComplete="off" defaultValue="" />
+        </label>
+      </div>
 
       <Campo id={`${id}-nombre`} label="Nombre completo" error={e.nombre}>
         <input id={`${id}-nombre`} name="nombre" type="text" required minLength={3} maxLength={120} autoComplete="name" defaultValue={v.nombre} className={input(e.nombre)} />

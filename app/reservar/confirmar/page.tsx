@@ -13,6 +13,7 @@ import { getOfertas } from "@/lib/beds24";
 import { isBeds24Configured, type CasaSlug } from "@/lib/beds24/client";
 import { parseBusqueda, type Busqueda } from "@/lib/busqueda";
 import { getCasa, getImagen, type Casa } from "@/lib/content";
+import { crearTokenFormulario } from "@/lib/form-token";
 import { formatDateLong, formatMXN, plural } from "@/lib/format";
 import { anticipo } from "@/lib/reserva";
 import { site, whatsappUrl } from "@/lib/site";
@@ -88,7 +89,7 @@ async function Contenido({ searchParams }: { searchParams: SearchParams }) {
         <h2 className="text-h3">Tus datos</h2>
         <p className="mt-1 text-sm text-ink-500">Solo lo necesario para apartar y escribirte.</p>
         <div className="mt-5">
-          <FormularioReserva casa={casa} arrival={b.arrival} departure={b.departure} personas={b.personas} total={total} mensajeWhatsApp={mensajeWhatsApp} />
+          <FormularioReserva casa={casa} arrival={b.arrival} departure={b.departure} personas={b.personas} total={total} mensajeWhatsApp={mensajeWhatsApp} token={crearTokenFormulario()} />
         </div>
       </div>
     </div>

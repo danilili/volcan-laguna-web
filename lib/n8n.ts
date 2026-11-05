@@ -9,6 +9,7 @@
  *   header X-VL-Web-Secret: N8N_WEBHOOK_SECRET
  *   200 {ok: true, reserva_id, folio, estado: "tentativa", resumen}
  *   409 {ok: false, error: "conflicto" | "ocupado" | "error", detalle}
+ *   429 {ok: false, error: "limite", detalle}
  *   400 {ok: false, error: "datos_invalidos", detalle, errores}
  *   502 {ok: false, error: "reserva_fallida", detalle}
  */
@@ -40,6 +41,7 @@ export type ReservaError =
   | "conflicto"
   | "ocupado"
   | "sin_confirmar"
+  | "limite"
   | "error"
   | "reserva_fallida"
   | "n8n_unavailable"
@@ -48,7 +50,7 @@ export type ReservaError =
 export type ReservaRechazada = { ok: false; error: ReservaError; detalle: string; status: number };
 export type RespuestaReserva = ReservaCreada | ReservaRechazada;
 
-const ERRORES_N8N = new Set<ReservaError>(["datos_invalidos", "conflicto", "ocupado", "sin_confirmar", "error", "reserva_fallida"]);
+const ERRORES_N8N = new Set<ReservaError>(["datos_invalidos", "conflicto", "ocupado", "sin_confirmar", "limite", "error", "reserva_fallida"]);
 
 export function isN8nConfigured(): boolean {
   return Boolean(process.env.N8N_WEBHOOK_SECRET);
