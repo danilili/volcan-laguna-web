@@ -4,7 +4,7 @@ import "./globals.css";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
-import { site } from "@/lib/site";
+import { indexable, site } from "@/lib/site";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -21,6 +21,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
+  // Pre-launch: keep the whole site out of search results (see lib/site.ts).
+  ...(indexable ? {} : { robots: { index: false, follow: false } }),
   title: {
     default: `${site.name} · Casas y retiros en la Laguna de Santa María del Oro`,
     template: `%s · ${site.name}`,

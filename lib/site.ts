@@ -3,6 +3,13 @@
  * Prices here are *reference* prices ("desde"); the real price always comes from Beds24.
  */
 
+/**
+ * Search engines may index the site only when SITE_INDEXABLE=true is set in
+ * the Vercel environment (flip it at launch and redeploy). Anything else,
+ * including the variable being missing, keeps every page on noindex.
+ */
+export const indexable = process.env.SITE_INDEXABLE === "true";
+
 export const site = {
   name: "Volcán Laguna",
   tagline: "Tres casas a la orilla de la Laguna de Santa María del Oro",
